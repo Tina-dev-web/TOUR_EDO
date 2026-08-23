@@ -132,10 +132,7 @@ const forgotPassword = async (req, res) => {
 
     await user.save();
 
-    const resetLink = `http://localhost:3000/reset-password/${resetToken}`;
-
-    console.log("Reset link:", resetLink);
-
+      const resetLink = `http://127.0.0.1:5500/frontend/reset-password.html?token=${resetToken}`;
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: user.email,
@@ -214,51 +211,13 @@ const resetPassword = async (req, res) => {
   }
 };
 
-const changePassword = async (req, res) => {
-  try {
-    const { currentPassword, newPassword } = req.body;
 
-    const user = await User.findById(req.user.userId);
 
-    if (!user) {
-      return res.status(404).json({
-        message: "User not found",
-      });
-    }
-
-    const isPasswordCorrect = await bcrypt.compare(
-      currentPassword,
-      user.password
-    );
-
-    if (!isPasswordCorrect) {
-      return res.status(401).json({
-        message: "Current password is incorrect",
-      });
-    }
-
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-
-    user.password = hashedPassword;
-
-    await user.save();
-
-    res.status(200).json({
-      message: "Password changed successfully",
-    });
-  } catch (error) {
-    console.error("Change password error:", error);
-
-    res.status(500).json({
-      message: "Server error",
-    });
-  }
-};
+ 
 module.exports = {
   registerUser,
   loginUser,
   forgotPassword,
   getAuthenticatedUser,
   resetPassword,
-  changePassword,
 };

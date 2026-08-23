@@ -19,7 +19,5 @@ router.post("/forgotpassword", forgotPassword);
 //this route is for users who want to reset their password, pls use this route to reset your password.
 router.post("/reset-password", resetPassword);
 
-//this route is for users who want to change their password, pls use this route to change your password.
-router.post("/change-password", protectedRoute, changePassword);
 
 module.exports = router;

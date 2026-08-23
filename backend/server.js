@@ -1,8 +1,8 @@
 const express = require("express");
+const app = express();
+const cors = require("cors");
 const dotenv = require("dotenv").config();
 
-console.log("EMAIL_USER exists:", !!process.env.EMAIL_USER);
-console.log("EMAIL_PASSWORD exists:", !!process.env.EMAIL_PASSWORD);
 const connectDB = require("./src/config/db");
 const authRoutes = require("./src/routes/authRoute");
 const userRoutes = require("./src/routes/userRoutes");
@@ -10,10 +10,9 @@ const userRoutes = require("./src/routes/userRoutes");
 
 
 
-const app = express();
 
+app.use(cors());
 app.use(express.json());
-
 connectDB();
 
 app.use("/api/auth", authRoutes);
