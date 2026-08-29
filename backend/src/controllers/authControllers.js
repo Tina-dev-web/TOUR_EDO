@@ -1,17 +1,21 @@
-const bcrypt = require("bcryptjs");
+ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const User = require("../models/User");
 const transporter = require("../config/email");
 
-
 const registerUser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     if (!name || !email || !password) {
       return res.status(400).json({
         message: "Name, email and password are required",
+      });
+    }
+    if (role && !["tourist", "guide"].includes(role)) {
+      return res.status(403).json({
+        message: "You cannot register as an admin",
       });
     }
 
@@ -29,6 +33,7 @@ const registerUser = async (req, res) => {
       name,
       email,
       password: hashedPassword,
+      role: role || "tourist",
     });
 
     return res.status(201).json({
