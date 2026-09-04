@@ -2,7 +2,7 @@
 const Hotel = require("../models/Hotel");
 // const TourPackage = require("../models/TourPackage");
 
-const Attraction = require("../models/Attraction");
+const Attraction = require("../models/attraction");
 
 const getRecommendations = async (req, res) => {
   try {

@@ -1,7 +1,7 @@
 const axios = require("axios");
 const Booking = require("../models/Booking");
 const Payment = require("../models/Payment");
-const User = require("../models/User");
+const User = require("../models/user");
 
 
 // INITIALIZE PAYMENT
