@@ -27,6 +27,13 @@ const userSchema = new mongoose.Schema(
       enum: ["tourist", "guide", "admin"],
       default: "tourist",
     },
+    resetPasswordToken: {
+  type: String,
+},
+
+resetPasswordExpires: {
+  type: Date,
+},
   },
   {
     timestamps: true,
@@ -34,5 +41,6 @@ const userSchema = new mongoose.Schema(
 );
 
 const User = mongoose.model("User", userSchema);
+
 
 module.exports = User;
