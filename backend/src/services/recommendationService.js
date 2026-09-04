@@ -1,4 +1,4 @@
-const Attraction = require("../models/Attraction");
+const Attraction = require("../models/attraction");
 const Hotel = require("../models/Hotel");
 // const TourPackage = require("../models/TourPackage");
 
@@ -86,30 +86,12 @@ const getRecommendations = async ({
       location,
     });
 
-    recommendations.push({
-      type: "hotel",
-      item: hotel,
-      score,
+      recommendations.push({
+        type: "hotel",
+        item: hotel,
+        score,
+      });
     });
-  });
-
-  // Get tour packages
-  const tours = await TourPackage.find();
-
-  tours.forEach((tour) => {
-    const score = calculateScore({
-      item: tour,
-      interest,
-      budget,
-      location,
-    });
-
-    recommendations.push({
-      type: "tour",
-      item: tour,
-      score,
-    });
-  });
 
   // Highest score first
   recommendations.sort(
