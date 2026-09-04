@@ -3,9 +3,9 @@ const Booking = require("../models/Booking");
 const Payment = require("../models/Payment");
 const User = require("../models/User");
 
-// ==========================================
+
 // INITIALIZE PAYMENT
-// ==========================================
+
 
 const initializePayment = async (req, res) => {
   try {
@@ -114,9 +114,9 @@ const initializePayment = async (req, res) => {
   }
 };
 
-// ==========================================
+
 // VERIFY PAYMENT
-// ==========================================
+
 
 const verifyPayment = async (req, res) => {
   try {
@@ -219,9 +219,7 @@ const verifyPayment = async (req, res) => {
   }
 };
 
-// ==========================================
-// EXPORTS
-// ==========================================
+
 
 module.exports = {
   initializePayment,

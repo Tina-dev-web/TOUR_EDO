@@ -1,9 +1,9 @@
 const Favourite = require("../models/Favourite");
 
-// ==========================================
+
 // ADD FAVOURITE
 // POST /api/favourites
-// ==========================================
+
 
 const addFavourite = async (req, res) => {
   try {
@@ -53,10 +53,10 @@ const addFavourite = async (req, res) => {
   }
 };
 
-// ==========================================
+
 // GET FAVOURITES
 // GET /api/favourites
-// ==========================================
+
 
 const getFavourites = async (req, res) => {
   try {
@@ -79,10 +79,10 @@ const getFavourites = async (req, res) => {
   }
 };
 
-// ==========================================
+
 // DELETE FAVOURITE
 // DELETE /api/favourites/:id
-// ==========================================
+
 
 const deleteFavourite = async (req, res) => {
   try {

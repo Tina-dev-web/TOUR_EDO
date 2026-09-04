@@ -1,9 +1,9 @@
 const Hotel = require("../models/Hotel");
 
-// ==========================================
+
 // GET ALL HOTELS + SEARCH + FILTER
 // GET /api/hotels
-// ==========================================
+
 
 const getHotels = async (req, res) => {
   try {
@@ -107,10 +107,10 @@ const getHotels = async (req, res) => {
   }
 };
 
-// ==========================================
+
 // GET SINGLE HOTEL
 // GET /api/hotels/:id
-// ==========================================
+
 
 const getHotelById = async (req, res) => {
   try {
