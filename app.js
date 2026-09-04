@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
 // ROUTES
 // ==========================
 // AUTH
-const authRoutes = require("./routes/authRoute")
-app.use("/api/auth", authRoutes);
+// const authRoutes = require("./routes/authRoute")
+// app.use("/api/auth", authRoutes);
 
 // Booking
 const bookingRoutes = require("./routes/bookingRoute");
