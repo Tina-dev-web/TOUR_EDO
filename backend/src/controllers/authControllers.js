@@ -137,7 +137,7 @@ const forgotPassword = async (req, res) => {
 
     await user.save();
 
-      const resetLink = `http://127.0.0.1:5500/frontend/reset-password.html?token=${resetToken}`;
+      const resetLink =`${process.env.FRONTEND_URL}/reset-password.html?token=${resetToken}`;
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: user.email,
