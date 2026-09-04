@@ -20,7 +20,7 @@ const generateTourRecommendation = async ({
     }));
 
     const prompt = `
-You are TourEdo AI, an intelligent tourism assistant
+Your TourEdo AI, an intelligent tourism assistant
 for visitors exploring Edo State, Nigeria.
 
 Create a helpful and concise tourism recommendation.

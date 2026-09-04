@@ -1,9 +1,9 @@
 const Review = require("../models/Review");
 const Booking = require("../models/Booking");
 
-// ==========================================
+
 // CREATE REVIEW
-// ==========================================
+
 
 const createReview = async (req, res) => {
   try {
@@ -86,9 +86,9 @@ const createReview = async (req, res) => {
   }
 };
 
-// ==========================================
+
 // GET REVIEW
-// ==========================================
+
 
 const getReview = async (req, res) => {
   try {
@@ -117,9 +117,9 @@ const getReview = async (req, res) => {
   }
 };
 
-// ==========================================
+
 // UPDATE REVIEW
-// ==========================================
+
 
 const updateReview = async (req, res) => {
   try {
@@ -160,9 +160,9 @@ const updateReview = async (req, res) => {
   }
 };
 
-// ==========================================
+
 // DELETE REVIEW
-// ==========================================
+
 
 const deleteReview = async (req, res) => {
   try {

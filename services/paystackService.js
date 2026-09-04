@@ -8,9 +8,9 @@ const paystackHeaders = {
   "Content-Type": "application/json",
 };
 
-// ==========================================
+
 // INITIALIZE PAYMENT
-// ==========================================
+
 
 const initializeTransaction = async ({
   email,
@@ -47,9 +47,9 @@ const initializeTransaction = async ({
   }
 };
 
-// ==========================================
+
 // VERIFY PAYMENT
-// ==========================================
+
 
 const verifyTransaction = async (reference) => {
   try {

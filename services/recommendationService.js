@@ -1,4 +1,4 @@
-// const Attraction = require("../models/Attraction");
+const Attraction = require("../models/Attraction");
 const Hotel = require("../models/Hotel");
 // const TourPackage = require("../models/TourPackage");
 
