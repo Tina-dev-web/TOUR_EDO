@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Edo | Admin Dashboard | Bookings</title>
+  <link rel="stylesheet" href="Bookings.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dashboard" /> 
+</head>
+<body>
+  <div class="container">
+    <aside id="sidebar">
+      <div class="top">
+        <div class="logo">
+          <img src="Images/Filter.png" alt="Tour Edo Logo">
+        </div>
+        <button type="button" class="close" id="closebtn" aria-label="Close menu">
+          <span class="fas fa-times" aria-hidden="true"></span>
+        </button>
+      </div> 
+      <div class="sidebar">
+        <a href="AdminDashboard.html">
+          <span><i class="fa-solid fa-grip-vertical"></i></span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="Tourist.html">
+          <span><i class="fa-solid fa-user-tie"></i></span>
+          <h3>Tourists</h3>
+        </a>
+        <a href="Bookings.html" class="active">
+          <span><i class="fa-solid fa-plane-departure"></i></span>
+          <h3>Bookings</h3>
+        </a>
+        <a href="Destinations.html">
+          <span><i class="fa-solid fa-map-location-dot"></i></span>
+          <h3>Destinations</h3>
+        </a>
+        <a href="Analytics.html">
+          <span><i class="fa-solid fa-chart-line"></i></span>
+          <h3>Analytics</h3>
+        </a>
+        <a href="Messages.html">
+          <span> <i class="fa-solid fa-message"></i></span>
+          <h3>Messages</h3>
+          <span class="message-count">26</span>
+        </a>
+        <a href="Report.html">
+          <span><i class="fa-solid fa-file-circle-exclamation"></i></span>
+          <h3>Reports</h3>
+        </a>
+        <a href="Settings.html">
+          <span><i class="fa-solid fa-gear"></i></span>
+          <h3>Settings</h3>
+        </a>
+        <a href="/Login.html">
+          <span><i class="fa-solid fa-sign-out-alt"></i></span>
+          <h3>Logout</h3>
+        </a>
+      </div>
+    </aside>
+
+    <main>
+      <div class="top-bar">
+        <button type="button" id="menubtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h1>Bookings</h1>
+      </div>
+
+      <section class="add-booking">
+        <h2>Add New Booking</h2>
+        <form>
+          <label for="tourist">Tourist Name</label>
+          <input type="text" id="tourist" placeholder="Enter tourist name">
+
+          <label for="destination">Destination</label>
+          <input type="text" id="destination" placeholder="Enter destination">
+
+          <label for="date">Booking Date</label>
+          <input type="date" id="date">
+
+          <label for="status">Status</label>
+          <select id="status">
+            <option value="confirmed">Confirmed</option>
+            <option value="pending">Pending</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+
+          <button type="submit" class="bttn">Save Booking</button>
+        </form>
+      </section>
+
+      <section class="booking-list">
+        <h2>All <span>Bookings</span></h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tourist</th>
+              <th>Destination</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>Royal Palace of Oba</td>
+              <td>2026-09-10</td>
+              <td>Confirmed</td>
+              <td>
+                <button class="btn btn-edit">Edit <i class="fa-solid fa-pen"></i></button>
+                <button class="btn btn-delete">Delete <i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Amina Yusuf</td>
+              <td>Okomu National Park</td>
+              <td>2026-09-15</td>
+              <td>Pending</td>
+              <td>
+                <button class="btn btn-edit">Edit <i class="fa-solid fa-pen"></i></button>
+                <button class="btn btn-delete">Delete <i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="Bookings.js"></script>
+</body>
+</html>

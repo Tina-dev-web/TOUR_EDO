@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard</title>
+  <link rel="stylesheet" href="UserDashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dashboard" />
+</head>
+<body>
+  <div class="container">
+    <aside id="sidebar">
+      <div class="top">
+        <div class="logo">
+          <img src="Images/Filter.png">
+        </div>
+        <div class="close" id="closebtn active">
+          <span class="fas fa-times"></span>
+        </div>
+      </div>
+      <div class="sidebar">
+        <a href="#" class="active">
+          <span><i class="fa-solid fa-grip-vertical"></i></span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="Attractions.html">
+          <span><i class="fa-solid fa-compass"></i></span>
+          <h3>Attraction</h3>
+        </a>
+        <a href="My Bookings.html">
+          <span><i class="fa-solid fa-receipt"></i></span>
+          <h3>My Bookings</h3>
+        </a>
+        <a href="Favourites.html">
+          <span><i class="fa-solid fa-heart"></i></span>
+          <h3>Favorites</h3>
+        </a>
+        <a href="#">
+          <span><i class="fa-solid fa-message"></i></span>
+          <h3>Messages</h3>
+          <span class="message-count">3</span>
+        </a>
+        <a href="#">
+          <span><i class="fa-solid fa-user"></i></span>
+          <h3>Profile</h3>
+        </a>
+        <a href="/Login.html">
+          <span><i class="fa-solid fa-sign-out-alt"></i></span>
+          <h3>Logout</h3>
+        </a>
+      </div>
+    </aside>
+    <!-- ................End of Sidebar.................. -->
+
+    <main>
+      <div class="top-bar">
+        <button type="button" id="menubtn active" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h1>Welcome back, Frank</h1>
+      </div>
+      
+      <div class="date">
+        <input type="date" name="" id="">
+      </div>
+      <div class="insights">
+        <div class="trips">
+          <span><i class="fa-solid fa-suitcase-rolling"></i></span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Trips</h3>
+              <h1>12</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38' cy='38' r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>81%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Since you joined</small>
+        </div>
+        <!-------------END OF TRIPS------------>
+        <div class="spent">
+          <span><i class="fa-solid fa-money-bill-wave"></i></span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Spent</h3>
+              <h1>$3,420</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38' cy='38' r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>62%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">This year</small>
+        </div>
+        <!-------------END OF SPENT------------>
+        <div class="rewards">
+          <span><i class="fa-solid fa-award"></i></span>
+          <div class="middle">
+            <div class="left">
+              <h3>Reward Points</h3>
+              <h1>1,240</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38' cy='38' r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>44%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Redeemable now</small>
+        </div>
+        <!-------------END OF REWARDS------------>
+      </div>
+      <div class="my-bookings">
+        <h2>My Bookings</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Igun Bronze Casters St.</td>
+              <td>Sept 12</td>
+              <td>$85</td>
+              <td class="success">Confirmed</td>
+              <td class="primary">Details</td>
+            </tr>
+            <tr>
+              <td>Oba Market</td>
+              <td>Sept 20</td>
+              <td>$40</td>
+              <td class="warning">Pending</td>
+              <td class="primary">Details</td>
+            </tr>
+            <tr>
+              <td>Benin Royal Palace</td>
+              <td>Oct 03</td>
+              <td>$120</td>
+              <td class="success">Confirmed</td>
+              <td class="primary">Details</td>
+            </tr>
+            <tr>
+              <td>Emotan Statue Tour</td>
+              <td>Oct 15</td>
+              <td>$60</td>
+              <td class="warning">Pending</td>
+              <td class="primary">Details</td>
+            </tr>
+            <tr>
+              <td>Ogba Zoo & Park</td>
+              <td>Oct 28</td>
+              <td>$50</td>
+              <td class="success">Confirmed</td>
+              <td class="primary">Details</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="#">Show All</a>
+      </div>
+    </main>
+    <!-- ...............END OF MAIN.............. -->
+
+    <div class="right">
+      <div class="top">
+        <button id="menubtn">
+          <span><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="theme-toggle">
+          <span class="active"></span>
+          <span></span>
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hey, <b>Frank</b></p>
+            <small class="text-muted">Tourist</small>
+          </div>
+          <div class="profile-photo">
+            <!-- <img src="Images/TourEdo.png"> -->
+          </div>
+        </div>
+      </div>
+      <!-- ......END OF TOP...... -->
+      <div class="recent-updates">
+        <h2>Recent Updates</h2>
+        <div class="updates">
+          <div class="update">
+            <div class="profile-photo">
+              <!-- <img src="Images/EdBackground.jpg"> -->
+            </div>
+            <div class="message">
+              <p>Your booking for <b>Benin Royal Palace</b> was confirmed</p>
+              <small class="text-muted">2 minutes ago</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <!-- <img src="Images/EdBackground.jpg"> -->
+            </div>
+            <div class="message">
+              <p>You earned <b>50 reward points</b> from your last trip</p>
+              <small class="text-muted">1 hour ago</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <!-- <img src="Images/EdBackground.jpg"> -->
+            </div>
+            <div class="message">
+              <p>Payment reminder for <b>Oba Market</b> tour</p>
+              <small class="text-muted">3 hours ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ............END OF RECENT UPDATES.............. -->
+      <div class="top-destinations">
+        <h2>Top Destinations</h2>
+        <div class="item trending">
+          <div class="icon">
+            <span><i class="fa-solid fa-fire"></i></span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Benin Royal Palace</h3>
+              <small class="text-muted">Trending this week</small>
+            </div>
+            <h5 class="danger">4.9 <i class="fa-solid fa-star"></i></h5>
+            <h3>$120</h3>
+          </div>
+        </div>
+        <div class="item seasonal">
+          <div class="icon">
+            <span><i class="fa-solid fa-sun"></i></span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Ogba Zoo & Park</h3>
+              <small class="text-muted">Best in dry season</small>
+            </div>
+            <h5 class="success">4.7 <i class="fa-solid fa-star"></i></h5>
+            <h3>$50</h3>
+          </div>
+        </div>
+        <div class="item">
+          <div class="icon">
+            <span><i class="fa-solid fa-landmark"></i></span>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3>Igun Bronze Casters St.</h3>
+              <small class="text-muted">UNESCO heritage site</small>
+            </div>
+            <h5 class="primary">4.8 <i class="fa-solid fa-star"></i></h5>
+            <h3>$85</h3>
+          </div>
+        </div>
+        <div class="item explore-more">
+          <div>
+            <span><i class="fa-solid fa-compass"></i></span>
+            <h3>Explore More Places</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="UserDashboard.js"></script>
+</body>
+</html>

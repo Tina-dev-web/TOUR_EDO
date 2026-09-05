@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Edo - Analytics</title>
+  <link rel="stylesheet" href="Analytics.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+  
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar">
+      <div class="top">
+        <div class="logo">
+          <img src="Images/Filter.png" alt="Tour Edo Logo">
+        </div>
+        <!-- Close Button -->
+        <button type="button" class="close" id="closebtn" aria-label="Close menu">
+          <span class="fas fa-times" aria-hidden="true"></span>
+        </button>
+      </div> 
+
+      <nav class="sidebar" aria-label="Main Navigation">
+        <a href="AdminDashboard.html">
+          <i class="fa-solid fa-grip-vertical" aria-hidden="true"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="Tourist.html">
+          <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+          <span>Tourists</span>
+        </a>
+        <a href="Bookings.html">
+          <i class="fa-solid fa-plane-departure" aria-hidden="true"></i>
+          <span>Bookings</span>
+        </a>
+        <a href="Destinations.html">
+          <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+          <span>Destinations</span>
+        </a>
+        <a href="Analytics.html" class="active" aria-current="page">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <span>Analytics</span>
+        </a>
+        <a href="Messages.html">
+          <i class="fa-solid fa-message" aria-hidden="true"></i>
+          <span>Messages</span>
+          <span class="message-count">26</span>
+        </a>
+        <a href="Report.html">
+          <i class="fa-solid fa-file-circle-exclamation" aria-hidden="true"></i>
+          <span>Reports</span>
+        </a>
+        <a href="Settings.html">
+          <i class="fa-solid fa-gear" aria-hidden="true"></i>
+          <span>Settings</span>
+        </a>
+        <a href="/Login.html">
+          <i class="fa-solid fa-sign-out-alt" aria-hidden="true"></i>
+          <span>Logout</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content-->
+    <main>
+      <div class="top-bar">
+        <!-- Open Menu Button (Mobile Only) -->
+        <button type="button" id="menubtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h1><i class="fa-solid fa-chart-line"></i> Analytics</h1>
+      </div>
+
+      <!-- Analytics Overview Cards -->
+      <section class="analytics-overview">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div class="card-details">
+            <h2>1,245</h2>
+            <p>Total Tourists</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-plane-departure"></i>
+          </div>
+          <div class="card-details">
+            <h2>876</h2>
+            <p>Total Bookings</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <div class="card-details">
+            <h2>32</h2>
+            <p>Destinations</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-dollar-sign"></i>
+          </div>
+          <div class="card-details">
+            <h2>$54,300</h2>
+            <p>Revenue</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics Table -->
+      <section class="analytics-table">
+        <h2><i class="fa-solid fa-calendar-alt"></i> Monthly <span>Bookings</span> Trend</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th><i class="fa-solid fa-calendar-days"></i> Month</th>
+                <th><i class="fa-solid fa-plane"></i> Bookings</th>
+                <th><i class="fa-solid fa-landmark"></i> Top Destination</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>January</td>
+                <td>120</td>
+                <td>Royal Palace of Oba</td>
+              </tr>
+              <tr>
+                <td>February</td>
+                <td>98</td>
+                <td>Okomu National Park</td>
+              </tr>
+              <tr>
+                <td>March</td>
+                <td>145</td>
+                <td>Benin National Museum</td>
+              </tr>
+              <tr>
+                <td>April</td>
+                <td>110</td>
+                <td>Ogba Zoo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+<script src="Analytics.js"></script>
+</body>
+</html>

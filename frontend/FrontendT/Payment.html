@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Booking | Edo Tourism</title>
+  <link rel="stylesheet" href="Payment.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+    <img src="Images/Filter.png" alt="logo" class="topbar__logo">
+    </div>
+  </header>
+
+  <main class="checkout">
+    <div class="checkout__inner">
+
+      <!-- Order summary -->
+      <section class="ticket" aria-labelledby="summary-heading">
+        <div class="ticket__main">
+          <p class="eyebrow">Your booking</p>
+          <h1 id="summary-heading">Benin City Heritage Walking Tour</h1>
+          <dl class="ticket__meta">
+            <div>
+              <dt>Date</dt>
+              <dd>Saturday, 12 September 2026</dd>
+            </div>
+            <div>
+              <dt>Guests</dt>
+              <dd>2 adults</dd>
+            </div>
+            <div>
+              <dt>Meeting point</dt>
+              <dd>Oba Market Gate, Benin City</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="ticket__stub">
+          <dl class="ticket__costs">
+            <div>
+              <dt>Tour (x2)</dt>
+              <dd>&#8358;30,000</dd>
+            </div>
+            <div>
+              <dt>Guide &amp; access fees</dt>
+              <dd>&#8358;5,000</dd>
+            </div>
+            <div class="ticket__total">
+              <dt>Total due</dt>
+              <dd>&#8358;35,000</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Payment form -->
+      <section class="pay-card" aria-labelledby="payment-heading">
+        <h2 id="payment-heading">Pay with card</h2>
+
+        <div class="pay-card__brands" aria-hidden="true">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+        </div>
+
+        <form class="pay-form" novalidate>
+
+          <div class="field">
+            <label for="name">Name on card</label>
+            <input type="text" id="name" name="name" autocomplete="cc-name" placeholder="Adaeze Okonkwo" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email for receipt</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="field">
+            <label for="card-number">Card number</label>
+            <div class="field__with-icon">
+              <input type="text" id="card-number" name="card-number" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" required>
+              <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="expiry">Expiry</label>
+              <input type="text" id="expiry" name="expiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" required>
+            </div>
+            <div class="field">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            Pay &#8358;35,000
+          </button>
+
+          <p class="pay-form__trust">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            Secured with 256-bit encryption. We never store your card details.
+          </p>
+
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>

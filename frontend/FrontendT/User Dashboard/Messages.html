@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages - Tourism Dashboard</title>
+  <link rel="stylesheet" href="Messages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+  <div class="container">
+    <aside id="sidebar-container">
+      <div class="top">
+        <div class="logo">
+          <img src="Images/Filter.png" alt="Logo">
+        </div>
+        <div class="close" id="closebtn">
+          <span class="fas fa-times"></span>
+        </div>
+      </div>
+      <div class="sidebar">
+        <a href="Dashboard.html">
+          <span><i class="fa-solid fa-grip-vertical"></i></span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="Attractions.html">
+          <span><i class="fa-solid fa-map-location-dot"></i></span>
+          <h3>Attractions</h3>
+        </a>
+        <a href="Bookings.html">
+          <span><i class="fa-solid fa-receipt"></i></span>
+          <h3>My Bookings</h3>
+        </a>
+        <a href="Favourites.html">
+          <span><i class="fa-solid fa-heart"></i></span>
+          <h3>Favorites</h3>
+        </a>
+        <a href="Messages.html" class="active">
+          <span><i class="fa-solid fa-message"></i></span>
+          <h3>Messages</h3>
+          <span class="message-count">3</span>
+        </a>
+        <a href="Profile.html">
+          <span><i class="fa-solid fa-user"></i></span>
+          <h3>Profile</h3>
+        </a>
+        <a href="/Login.html">
+          <span><i class="fa-solid fa-right-from-bracket"></i></span>
+          <h3>Logout</h3>
+        </a>
+      </div>
+    </aside>
+
+    <main class="messages-wrapper">
+      <div class="mobile-header">
+        <button id="menubtn" class="menu-trigger">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h2>Messages</h2>
+      </div>
+
+      <div class="chat-container">
+        <div class="chat-sidebar">
+          <div class="chat-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search messages...">
+          </div>
+          <div class="chat-tabs">
+            <button class="tab-btn active">All</button>
+            <button class="tab-btn">Unread</button>
+          </div>
+          <div class="conversation-list">
+            <div class="conversation-card active">
+              <div class="avatar-wrap">
+                <img src="Images/Filter.png" alt="Tour Guide">
+                <span class="status-dot online"></span>
+              </div>
+              <div class="card-info">
+                <div class="card-header">
+                  <h4>Osaze (Tour Edo Guide)</h4>
+                  <span class="time">10:42 AM</span>
+                </div>
+                <p class="preview">We will meet at the Benin Moat entrance at 9 AM tomorrow.</p>
+              </div>
+            </div>
+
+            <div class="conversation-card">
+              <div class="avatar-wrap">
+                <img src="Images/Filter.png" alt="Support Agent">
+                <span class="status-dot offline"></span>
+              </div>
+              <div class="card-info">
+                <div class="card-header">
+                  <h4>Customer Support</h4>
+                  <span class="time">Yesterday</span>
+                </div>
+                <p class="preview">Your booking for the Royal Palace tour is confirmed!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-main">
+          <div class="chat-header">
+            <div class="chat-header-left">
+              <button class="back-btn" title="Back to conversations">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <div class="active-user-info">
+                <img src="Images/Filter.png" alt="Active User">
+                <div>
+                  <h3>Osaze (Tour Edo Guide)</h3>
+                  <span class="status-text">Online</span>
+                </div>
+              </div>
+            </div>
+            <div class="chat-actions">
+              <button title="Call"><i class="fa-solid fa-phone"></i></button>
+              <button title="View Details"><i class="fa-solid fa-circle-info"></i></button>
+            </div>
+          </div>
+
+          <div class="chat-messages">
+            <div class="message received">
+              <p>Hello! Looking forward to guiding your tour tomorrow.</p>
+              <span class="msg-time">10:40 AM</span>
+            </div>
+            <div class="message sent">
+              <p>Hi Osaze! What time should we arrive at the starting location?</p>
+              <span class="msg-time">10:41 AM</span>
+            </div>
+            <div class="message received">
+              <p>We will meet at the Benin Moat entrance at 9 AM tomorrow.</p>
+              <span class="msg-time">10:42 AM</span>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <button class="icon-btn" title="Attach file"><i class="fa-solid fa-paperclip"></i></button>
+            <input type="text" placeholder="Type your message here...">
+            <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="Messages.js"></script>
+</body>
+</html>

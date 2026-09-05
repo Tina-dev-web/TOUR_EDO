@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings - Tourism Dashboard</title>
+  <link rel="stylesheet" href="My Bookings.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <img src="Images/Filter.png" alt="Logo">
+        </div>
+        <div class="close" id="closebtn">
+          <span class="fas fa-times"></span>
+        </div>
+      </div>
+      <div class="sidebar">
+        <a href="Dashboard.html">
+          <span><i class="fa-solid fa-grip-vertical"></i></span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="Attractions.html">
+          <span><i class="fa-solid fa-map-location-dot"></i></span>
+          <h3>Attractions</h3>
+        </a>
+        <!-- Active Link for Bookings Page -->
+        <a href="#" class="active">
+          <span><i class="fa-solid fa-receipt"></i></span>
+          <h3>My Bookings</h3>
+        </a>
+        <a href="Favourites.html">
+          <span><i class="fa-solid fa-heart"></i></span>
+          <h3>Favorites</h3>
+        </a>
+        <a href="Messages.html">
+          <span><i class="fa-solid fa-message"></i></span>
+          <h3>Messages</h3>
+          <span class="message-count">3</span>
+        </a>
+        <a href="Profile.html">
+          <span><i class="fa-solid fa-user"></i></span>
+          <h3>Profile</h3>
+        </a>
+        <a href="/Login.html">
+          <span><i class="fa-solid fa-right-from-bracket"></i></span>
+          <h3>Logout</h3>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Bookings Section -->
+    <main class="main-content">
+      <header class="main-header">
+        <h1>My Bookings</h1>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search booking ID or destination...">
+        </div>
+      </header>
+
+      <!-- Booking Status Filters -->
+      <div class="categories">
+        <button class="category-btn active">All Bookings</button>
+        <button class="category-btn">Upcoming</button>
+        <button class="category-btn">Completed</button>
+        <button class="category-btn">Cancelled</button>
+      </div>
+
+      <!-- Bookings Cards Container -->
+      <div class="attractions-grid">
+        <!-- Upcoming Booking -->
+        <div class="card">
+          <div class="card-img-holder">
+            <img src="Images/EdBackground.jpg" alt="Palace Tour">
+            <span class="favorite-icon"><i class="fa-solid fa-ticket"></i></span>
+          </div>
+          <div class="card-details">
+            <h3>Royal Palace Guided Tour</h3>
+            <p><i class="fa-solid fa-calendar-days"></i> Sept 15, 2026 • 10:00 AM</p>
+            <p><i class="fa-solid fa-hashtag"></i> Booking ID: #EDO-8492</p>
+            <div class="card-footer">
+              <span class="rating" style="color: var(--color-success);"><i class="fa-solid fa-circle-check"></i> Confirmed</span>
+              <button class="btn-book">View Ticket</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Completed Booking -->
+        <div class="card">
+          <div class="card-img-holder">
+            <img src="Images/EdBackground.jpg" alt="Park Entry">
+            <span class="favorite-icon"><i class="fa-solid fa-ticket"></i></span>
+          </div>
+          <div class="card-details">
+            <h3>Okomu Park Day Pass</h3>
+            <p><i class="fa-solid fa-calendar-days"></i> Aug 20, 2026 • 09:00 AM</p>
+            <p><i class="fa-solid fa-hashtag"></i> Booking ID: #EDO-3104</p>
+            <div class="card-footer">
+              <span class="rating" style="color: var(--color-info-dark);"><i class="fa-solid fa-clock-rotate-left"></i> Completed</span>
+              <button class="btn-book">Receipt</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Profile Panel -->
+    <div class="right-panel">
+      <div class="profile-section">
+        <div class="profile-photo"></div>
+        <div class="profile-info">
+          <b>User Account</b>
+          <p class="text-muted">Tourist Explorer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

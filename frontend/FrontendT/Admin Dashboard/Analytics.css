@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif, Segoe UI;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  appearance: 0;
+}
+
+:root {
+  --edo-red: #5c1a1b;
+  --edo-gold: #d4af37;
+  --edo-gold-bright: #f5d76e;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --color-info-light: #dce1eb;
+  --color-info-dark: #7d8da1;
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-white: #fff;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #677483;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --boxshadow: 0 1rem 1rem var(--color-light);
+}
+
+html {
+  font-size: 14px;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 0.8rem;
+  background: var(--color-background);
+  -webkit-user-select: none;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  margin: auto;
+  gap: 1.8rem;
+  grid-template-columns: 14rem auto;
+  padding: 1.4rem 1rem;
+}
+
+.container > * {
+  min-width: 0;
+}
+
+a {
+  color: var(--color-dark);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+.profile-photo {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background-image: url(Images/EdBackground.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.text-muted {
+  color: var(--color-info-dark);
+}
+
+p {
+  color: var(--color-dark-variant);
+}
+
+b {
+  color: var(--color-dark);
+}
+
+/* Sidebar */
+
+aside {
+  height: 100vh;
+}
+
+aside .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+  background: var(--edo-gold-bright);
+  border-radius: var(--border-radius-2);
+  padding: 0.5rem;
+}
+
+aside .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside .logo img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+}
+
+/* Close button styling: Hidden on desktop */
+#closebtn {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+#closebtn span {
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+aside .sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
+  position: relative;
+  top: 3rem;
+}
+
+aside .sidebar a {
+  display: flex;
+  color: var(--color-dark);
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  height: 3.7rem;
+  transition: all 300ms ease;
+}
+
+aside .sidebar a i {
+  font-size: 1.4rem;
+  transition: all 300ms ease;
+}
+
+aside .sidebar a:last-child {
+  position: absolute;
+  bottom: 0.2rem;
+  width: 100%;
+}
+
+aside .sidebar a.active {
+  background: var(--edo-red);
+  color: var(--edo-gold);
+  margin-left: 0;
+  border-radius: var(--border-radius-1);
+}
+
+aside .sidebar a.active::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background: var(--edo-gold);
+}
+
+aside .sidebar a.active i,
+aside .sidebar a.active span {
+  color: var(--edo-gold);
+}
+
+aside .sidebar a:hover {
+  color: var(--edo-gold);
+}
+
+aside .sidebar a:hover i {
+  margin-left: 0.5rem;
+}
+
+aside .sidebar .message-count {
+  background: var(--edo-red);
+  color: var(--edo-gold-bright);
+  padding: 2px 10px;
+  font-size: 11px;
+  border-radius: var(--border-radius-1);
+}
+
+/* -------- Main Content Area -------- */
+
+main {
+  background: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--boxshadow);
+  margin-top: 1.4rem;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.top-bar h1 {
+  margin-bottom: 0;
+}
+
+/* Open menu button styling: Hidden on desktop */
+#menubtn {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--color-dark);
+}
+
+/* Analytics Cards */
+
+.analytics-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.analytics-overview .card {
+  background: var(--color-background);
+  padding: 1.4rem;
+  border-radius: var(--border-radius-3);
+  box-shadow: var(--boxshadow);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: all 300ms ease;
+}
+
+.analytics-overview .card:hover {
+  transform: translateY(-4px);
+  box-shadow: none;
+}
+
+.card-icon i {
+  width: 3.5rem;
+  height: 3.5rem;
+  min-width: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--edo-red);
+  color: var(--edo-gold-bright);
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+
+.card-details h2 {
+  color: var(--color-dark);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.card-details p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary-variant);
+}
+
+/* Analytics Table */
+
+.analytics-table h2 {
+  margin-bottom: 1rem;
+  color: var(--edo-red);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.analytics-table h2 span {
+  color: var(--edo-gold);
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.analytics-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.analytics-table th, .analytics-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-light);
+}
+
+.analytics-table th {
+  background: var(--edo-red);
+  color: var(--edo-gold-bright);
+  font-weight: 600;
+}
+
+.analytics-table tr:hover {
+  background-color: var(--color-light);
+}
+
+/* -------- Responsive View (Mobile & Tablet) -------- */
+
+@media screen and (max-width: 768px) {
+  .container { 
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+  }
+
+  /* Show both buttons on small screens */
+  #menubtn {
+    display: inline-block;
+  }
+
+  #closebtn {
+    display: inline-block;
+  }
+
+  /* Off-canvas sidebar configuration */
+  aside {
+    position: fixed;
+    left: -100%;
+    background: var(--color-white);
+    width: 18rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    height: 100vh;
+    padding-right: var(--card-padding);
+    transition: all 400ms ease;
+  }
+
+  /* Add this class via JS when opening the menu */
+  aside.active {
+    left: 0;
+  }
+
+  main { 
+    padding: 1.2rem; 
+  }
+
+  .analytics-overview {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Edo - Settings</title>
+  <link rel="stylesheet" href="Settings.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar">
+      <div class="top">
+        <div class="logo">
+          <img src="Images/Filter.png" alt="Tour Edo Logo">
+        </div>
+        <!-- Close Button (Mobile Only) -->
+        <button type="button" class="close" id="closebtn" aria-label="Close menu">
+          <span class="fas fa-times" aria-hidden="true"></span>
+        </button>
+      </div> 
+
+      <nav class="sidebar" aria-label="Main Navigation">
+        <a href="AdminDashboard.html">
+          <i class="fa-solid fa-grip-vertical" aria-hidden="true"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="Tourist.html">
+          <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+          <span>Tourists</span>
+        </a>
+        <a href="Bookings.html">
+          <i class="fa-solid fa-plane-departure" aria-hidden="true"></i>
+          <span>Bookings</span>
+        </a>
+        <a href="Destinations.html">
+          <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+          <span>Destinations</span>
+        </a>
+        <a href="Analytics.html">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <span>Analytics</span>
+        </a>
+        <a href="Messages.html">
+          <i class="fa-solid fa-message" aria-hidden="true"></i>
+          <span>Messages</span>
+          <span class="message-count">26</span>
+        </a>
+        <a href="Report.html">
+          <i class="fa-solid fa-file-circle-exclamation" aria-hidden="true"></i>
+          <span>Reports</span>
+        </a>
+        <a href="Settings.html" class="active" aria-current="page">
+          <i class="fa-solid fa-gear" aria-hidden="true"></i>
+          <span>Settings</span>
+        </a>
+        <a href="/Login.html">
+          <i class="fa-solid fa-sign-out-alt" aria-hidden="true"></i>
+          <span>Logout</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="header">
+        <div class="top-bar">
+          <!-- Open Menu Button (Mobile Only) -->
+          <button type="button" id="menubtn" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="title">
+            <h1>Settings</h1>
+            <p class="text-muted">Manage system preferences, staff accounts, and admin security.</p>
+          </div>
+        </div>
+        <div class="user-profile">
+          <div class="profile-photo"></div>
+          <div class="info">
+            <p><b>Admin User</b></p>
+            <small class="text-muted">Super Admin</small>
+          </div>
+        </div>
+      </header>
+
+      <div class="settings-grid">
+        <!-- Profile Settings Card -->
+        <section class="card">
+          <h2><i class="fa-solid fa-user-gear"></i> Admin Profile</h2>
+          <form class="settings-form">
+            <div class="form-group">
+              <label for="admin-name">Full Name</label>
+              <input type="text" id="admin-name" value="Admin User">
+            </div>
+            <div class="form-group">
+              <label for="admin-email">Email Address</label>
+              <input type="email" id="admin-email" value="admin@touredo.com">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Profile</button>
+          </form>
+        </section>
+
+        <!-- Staff Management Card -->
+        <section class="card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-users"></i> Staff & Team Management</h2>
+            <button type="button" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> Add Staff</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Victor Edo</td>
+                  <td>Tour Guide</td>
+                  <td><span class="badge success-badge">Active</span></td>
+                  <td><button class="btn-icon"><i class="fa-solid fa-pen"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Sarah Osagie</td>
+                  <td>Support Agent</td>
+                  <td><span class="badge success-badge">Active</span></td>
+                  <td><button class="btn-icon"><i class="fa-solid fa-pen"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Preferences & Security -->
+        <section class="card">
+          <h2><i class="fa-solid fa-shield-halved"></i> Security & Preferences</h2>
+          <form class="settings-form">
+            <div class="form-group">
+              <label for="current-pass">Current Password</label>
+              <input type="password" id="current-pass" placeholder="••••••••">
+            </div>
+            <div class="form-group">
+              <label for="new-pass">New Password</label>
+              <input type="password" id="new-pass" placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Password</button>
+          </form>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2026 Tour Edo. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="Settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Tourism Dashboard</title>
+  <link rel="stylesheet" href="Profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+  <div class="container">
+    <aside id="sidebar-container">
+      <div class="top">
+        <div class="logo">
+          <img src="Images/Filter.png" alt="Logo">
+        </div>
+        <div class="close" id="closebtn">
+          <span class="fas fa-times"></span>
+        </div>
+      </div>
+      <div class="sidebar">
+        <a href="Dashboard.html">
+          <span><i class="fa-solid fa-grip-vertical"></i></span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="Attractions.html">
+          <span><i class="fa-solid fa-map-location-dot"></i></span>
+          <h3>Attractions</h3>
+        </a>
+        <a href="Bookings.html">
+          <span><i class="fa-solid fa-receipt"></i></span>
+          <h3>My Bookings</h3>
+        </a>
+        <a href="Favourites.html">
+          <span><i class="fa-solid fa-heart"></i></span>
+          <h3>Favorites</h3>
+        </a>
+        <a href="Messages.html">
+          <span><i class="fa-solid fa-message"></i></span>
+          <h3>Messages</h3>
+          <span class="message-count">3</span>
+        </a>
+        <a href="Profile.html" class="active">
+          <span><i class="fa-solid fa-user"></i></span>
+          <h3>Profile</h3>
+        </a>
+        <a href="/Login.html">
+          <span><i class="fa-solid fa-right-from-bracket"></i></span>
+          <h3>Logout</h3>
+        </a>
+      </div>
+    </aside>
+
+    <main class="profile-wrapper">
+      <div class="mobile-header">
+        <button id="menubtn" class="menu-trigger">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h2>Profile</h2>
+      </div>
+
+      <!-- Profile header -->
+      <section class="profile-header-card">
+        <div class="cover-banner">
+          <button class="cover-edit-btn" title="Change cover"><i class="fa-solid fa-camera"></i></button>
+        </div>
+        <div class="profile-identity">
+          <div class="avatar-large-wrap">
+            <img src="Images/Filter.png" alt="Profile avatar" class="avatar-large">
+            <button class="avatar-edit-btn" title="Change photo"><i class="fa-solid fa-camera"></i></button>
+          </div>
+          <div class="identity-text">
+            <div class="identity-name-row">
+              <h1>Anthony T</h1>
+              <span class="member-badge"><i class="fa-solid fa-crown"></i> Gold Explorer</span>
+            </div>
+            <p class="identity-bio">Exploring the heritage and culture of Edo State, one attraction at a time.</p>
+            <p class="identity-meta"><i class="fa-solid fa-location-dot"></i> Benin City, Nigeria &nbsp;·&nbsp; Joined March 2024</p>
+          </div>
+          <button class="edit-profile-btn"><i class="fa-solid fa-pen"></i> Edit Profile</button>
+        </div>
+      </section>
+
+      <!-- Quick stats -->
+      <section class="profile-stats">
+        <div class="stat-card">
+          <span class="stat-icon trips"><i class="fa-solid fa-plane-departure"></i></span>
+          <div>
+            <h2>12</h2>
+            <p>Trips Completed</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon bookings"><i class="fa-solid fa-receipt"></i></span>
+          <div>
+            <h2>18</h2>
+            <p>Total Bookings</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon favorites"><i class="fa-solid fa-heart"></i></span>
+          <div>
+            <h2>24</h2>
+            <p>Favorites</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon reviews"><i class="fa-solid fa-star"></i></span>
+          <div>
+            <h2>7</h2>
+            <p>Reviews Written</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="profile-grid">
+        <!-- Left column -->
+        <div class="profile-col">
+
+          <section class="card info-card">
+            <div class="card-title-row">
+              <h3>Personal Information</h3>
+              <button class="text-btn edit-toggle" id="editInfoBtn"><i class="fa-solid fa-pen"></i> Edit</button>
+            </div>
+            <form class="info-form" id="infoForm">
+              <div class="form-field">
+                <label>Full Name</label>
+                <input type="text" value="Anthony T" disabled>
+              </div>
+              <div class="form-field">
+                <label>Email Address</label>
+                <input type="email" value="anthony.t@example.com" disabled>
+              </div>
+              <div class="form-field">
+                <label>Phone Number</label>
+                <input type="tel" value="+234 801 234 5678" disabled>
+              </div>
+              <div class="form-field">
+                <label>Location</label>
+                <input type="text" value="Benin City, Nigeria" disabled>
+              </div>
+              <div class="form-field">
+                <label>Date of Birth</label>
+                <input type="date" value="1998-06-14" disabled>
+              </div>
+              <div class="form-field full-width">
+                <label>Bio</label>
+                <textarea disabled rows="3">Exploring the heritage and culture of Edo State, one attraction at a time.</textarea>
+              </div>
+              <div class="form-actions" id="infoFormActions">
+                <button type="button" class="btn-secondary" id="cancelInfoBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Save Changes</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="card preferences-card">
+            <div class="card-title-row">
+              <h3>Travel Preferences</h3>
+            </div>
+            <p class="card-subtext">Select the experiences you're most interested in — this helps us recommend better attractions for you.</p>
+            <div class="chip-list">
+              <button class="chip active">Heritage Sites</button>
+              <button class="chip active">Food &amp; Culture</button>
+              <button class="chip">Nature &amp; Wildlife</button>
+              <button class="chip active">Festivals &amp; Events</button>
+              <button class="chip">Adventure Sports</button>
+              <button class="chip">Photography Tours</button>
+              <button class="chip">Nightlife</button>
+              <button class="chip">Family Friendly</button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Right column -->
+        <div class="profile-col">
+
+          <section class="card activity-card">
+            <div class="card-title-row">
+              <h3>Recent Activity</h3>
+              <a href="Bookings.html" class="text-btn">View all</a>
+            </div>
+            <div class="activity-list">
+              <div class="activity-item">
+                <span class="activity-icon upcoming"><i class="fa-solid fa-map-location-dot"></i></span>
+                <div class="activity-info">
+                  <h4>Benin Moat Guided Tour</h4>
+                  <p>Sat, 14 Sept · with Osaze</p>
+                </div>
+                <span class="status-badge upcoming">Upcoming</span>
+              </div>
+              <div class="activity-item">
+                <span class="activity-icon completed"><i class="fa-solid fa-landmark"></i></span>
+                <div class="activity-info">
+                  <h4>Royal Palace of the Oba</h4>
+                  <p>Completed · 2 Aug</p>
+                </div>
+                <span class="status-badge completed">Completed</span>
+              </div>
+              <div class="activity-item">
+                <span class="activity-icon completed"><i class="fa-solid fa-mask"></i></span>
+                <div class="activity-info">
+                  <h4>Igue Festival Experience</h4>
+                  <p>Completed · 29 Dec</p>
+                </div>
+                <span class="status-badge completed">Completed</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="card security-card">
+            <div class="card-title-row">
+              <h3>Account &amp; Security</h3>
+            </div>
+            <form class="info-form" id="passwordForm">
+              <div class="form-field full-width password-field">
+                <label>Current Password</label>
+                <input type="password" placeholder="••••••••">
+                <button type="button" class="toggle-visibility"><i class="fa-solid fa-eye"></i></button>
+              </div>
+              <div class="form-field password-field">
+                <label>New Password</label>
+                <input type="password" placeholder="••••••••">
+                <button type="button" class="toggle-visibility"><i class="fa-solid fa-eye"></i></button>
+              </div>
+              <div class="form-field password-field">
+                <label>Confirm New Password</label>
+                <input type="password" placeholder="••••••••">
+                <button type="button" class="toggle-visibility"><i class="fa-solid fa-eye"></i></button>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Update Password</button>
+              </div>
+            </form>
+
+            <div class="toggle-row">
+              <div>
+                <h4>Two-Factor Authentication</h4>
+                <p>Add an extra layer of security to your account.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="toggle-row">
+              <div>
+                <h4><i class="fa-brands fa-google"></i> Google Account</h4>
+                <p>Not connected</p>
+              </div>
+              <button class="btn-secondary small">Connect</button>
+            </div>
+          </section>
+
+          <section class="card danger-card">
+            <div class="card-title-row">
+              <h3>Danger Zone</h3>
+            </div>
+            <div class="danger-row">
+              <div>
+                <h4>Log Out</h4>
+                <p>Sign out of your account on this device.</p>
+              </div>
+              <a href="/Login.html" class="btn-secondary small">Log Out</a>
+            </div>
+            <div class="danger-row">
+              <div>
+                <h4>Delete Account</h4>
+                <p>Permanently remove your account and all data.</p>
+              </div>
+              <button class="btn-danger small" id="deleteAccountBtn">Delete</button>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="Profile.js"></script>
+</body>
+</html>
