@@ -11,7 +11,7 @@
 }
 
 :root {
-  /* Rich Edo Cultural Palette */
+  /*  Edo colours*/
   --edo-red: #6A1B1A;
   --edo-red-light: #8B2625;
   --edo-gold: #D4AF37;
@@ -45,17 +45,6 @@
   --shadow-lg: 0 20px 35px -10px rgba(106, 27, 26, 0.15);
 }
 
-.dark-theme-variables {
-  --color-background: #0F1115;
-  --color-surface: rgba(22, 26, 34, 0.85);
-  --color-surface-hover: #1A1F29;
-  --color-white: #161A22;
-  --color-dark: #F1F5F9;
-  --color-dark-variant: #94A3B8;
-  --card-border: 1px solid rgba(255, 255, 255, 0.08);
-  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-}
-
 html {
   font-size: 14px;
   width: 100%;
@@ -67,8 +56,8 @@ body {
   font-size: 0.85rem;
   background: var(--color-background);
   background-image:
-    radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(106, 27, 26, 0.05) 0px, transparent 50%);
+  radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.05) 0px, transparent 50%),
+  radial-gradient(at 100% 100%, rgba(106, 27, 26, 0.05) 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--color-dark);
   overflow-x: hidden;
@@ -104,13 +93,7 @@ aside {
 aside .top {
   display: flex;
   align-items: center;
-  /* FIX: was `justify-content: space-between`, which only makes sense with
-     two children. On desktop `.close` is hidden, leaving `.logo` as the sole
-     flex item, so space-between shoved it to the far left. Centering here
-     is correct for the default (desktop) state; the mobile media query
-     below switches it back to space-between once the close (X) button
-     reappears as a second item. */
-  justify-content: center;
+  justify-content: space-between;
   padding: 0.75rem 1.25rem;
   background: var(--color-surface);
   -webkit-backdrop-filter: blur(12px);
@@ -127,8 +110,8 @@ aside .logo {
 }
 
 aside .logo img {
-  width: 4rem;
-  height: 4rem;
+  width: 7rem;
+  height: 7rem;
 }
 
 aside .close { display: none; }
@@ -540,10 +523,7 @@ aside .sidebar .message-count {
     margin-left: 0;
   }
 
-  /* FIX: previously the "3" badge kept its `margin-left: auto` and stayed
-     in the flex flow even with the label hidden, so it shoved the message
-     icon off-center. Pulling it out of flow and pinning it to the corner
-     of the link keeps the icon perfectly centered. */
+  
   aside .sidebar .message-count {
     position: absolute;
     top: 0.35rem;
@@ -613,10 +593,11 @@ aside .sidebar .message-count {
   aside .close {
     display: block;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: var(--color-dark);
   }
 
+  
   .mobile-header {
     display: flex;
   }
@@ -625,9 +606,6 @@ aside .sidebar .message-count {
     height: calc(100vh - 2rem);
   }
 
-  /* FIX: the chat pane and the conversation list now swap via the
-     `.show-chat` class (toggled in Messages.js) instead of `.chat-main`
-     being permanently hidden with no way to reopen it. */
   .chat-container {
     grid-template-columns: 1fr;
     position: relative;

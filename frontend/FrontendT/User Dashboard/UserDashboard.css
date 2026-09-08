@@ -38,14 +38,6 @@
   --boxshadow: 0 2rem 3rem var(--color-light);
 }
 
-.dark-theme-variables{
-  --color-background: #181a1e;
-  --color-white: #202528;
-  --color-dark: #edeffd;
-  --color-dark-variant: #a3bdcc;
-  --color-light: rgba(0, 0, 0, 0.4);
-  --box-shadow: 0 2rem 3rem var(var(--color-light))
-}
 
 html{
   font-size: 14px;
@@ -188,6 +180,7 @@ aside .sidebar {
   margin-top: 1.25rem;
   padding: 0.75rem;
   background: var(--color-surface);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border: var(--card-border);
   border-radius: 1.25rem;
@@ -671,7 +664,7 @@ main .my-bookings a{
   }
   aside .sidebar a:last-child{
     position: absolute;
-    bottom: 5rem;
+    bottom: 10rem;
   }
 
   aside .close{

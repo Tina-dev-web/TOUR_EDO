@@ -116,12 +116,16 @@ aside .top {
   border-radius: 1rem;
   box-shadow: var(--shadow-sm);
 }
-
-aside .logo img {
-  width: 10rem;
-  height: 5rem;
-  object-fit: contain;
+aside .logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+aside .logo img {
+  width: 7rem;
+  height: 7rem;
+}
+
 
 aside .close {
   display: none;
@@ -189,6 +193,7 @@ aside .sidebar a.active h3 {
 aside .sidebar a:last-child {
   margin-top: auto;
   color: var(--color-danger);
+  bottom: 40%;
 }
 
 aside .sidebar a:last-child:hover {
