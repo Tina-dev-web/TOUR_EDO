@@ -10,9 +10,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const infoFormActions = document.getElementById("infoFormActions");
 
 
-  // =========================
-  // LOAD PROFILE
-  // =========================
 
   try {
 
@@ -115,7 +112,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
   });
-  
+
   const deleteAccountBtn =
     document.getElementById("deleteAccountBtn");
 

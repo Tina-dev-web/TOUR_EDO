@@ -33,7 +33,7 @@ registerBtn.addEventListener("click", async (e) => {
 });
 
 
-// PopUp
+
 let popUp = document.getElementById("popUp");
   function openPopUp() {
     popUp.classList.add("openPopUp");

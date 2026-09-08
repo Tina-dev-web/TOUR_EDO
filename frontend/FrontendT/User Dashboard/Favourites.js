@@ -1,6 +1,3 @@
-// ========================================
-// TOUR EDO FAVOURITES
-// ========================================
 
 const favouritesContainer = document.getElementById("favouritesContainer");
 
@@ -12,44 +9,39 @@ const errorMessage = document.getElementById("errorMessage");
 
 let favourites = [];
 
-// ========================================
-// GET TOKEN
-// ========================================
 
-function getToken() {
-  return localStorage.getItem("token");
-}
+    function getToken() {
+      return localStorage.getItem("token");
+    }
 
-// ========================================
-// LOAD FAVOURITES
-// ========================================
 
-async function loadFavourites() {
-  const token = getToken();
 
-  // User is not logged in
-  if (!token) {
+    async function loadFavourites() {
+      const token = getToken();
+
+      
+    if (!token) {
     loading.style.display = "none";
 
     errorMessage.style.display = "block";
 
     errorMessage.innerHTML = `
-            <p>
-                Please login to view your favourites.
-            </p>
+    <p>
+      Please login to view your favourites.
+    </p>
 
-            <a
-                href="login.html"
-                class="cta-btn"
-            >
-                Login
-            </a>
-        `;
+    <a
+      href="login.html"
+      class="cta-btn"
+    >
+      Login
+    </a>
+    `;
 
     return;
-  }
+    }
 
-  try {
+    try {
     loading.style.display = "block";
 
     emptyState.style.display = "none";
@@ -57,9 +49,9 @@ async function loadFavourites() {
     errorMessage.style.display = "none";
 
     const response = await getData("/favourites", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+    headers: {
+    Authorization: `Bearer ${token}`,
+    },
     });
 
     console.log("Favourites response:", response);
@@ -69,13 +61,13 @@ async function loadFavourites() {
     loading.style.display = "none";
 
     if (favourites.length === 0) {
-      emptyState.style.display = "block";
+    emptyState.style.display = "block";
 
-      return;
+    return;
     }
 
     displayFavourites();
-  } catch (error) {
+    } catch (error) {
     console.error("Favourites error:", error);
 
     loading.style.display = "none";
@@ -83,27 +75,14 @@ async function loadFavourites() {
     errorMessage.style.display = "block";
 
     errorMessage.textContent = error.message || "Unable to load favourites.";
-  }
-}
+    }
+    }
 
-// ========================================
-// DISPLAY FAVOURITES
-// ========================================
+    function displayFavourites() {
+    favouritesContainer.innerHTML = "";
 
-function displayFavourites() {
-  favouritesContainer.innerHTML = "";
+    favourites.forEach((favourite) => {
 
-  favourites.forEach((favourite) => {
-    /*
-     * Depending on your backend schema,
-     * the attraction may be inside:
-     *
-     * favourite.attraction
-     *
-     * or
-     *
-     * favourite.place
-     */
 
     const place = favourite.attraction || favourite.place || favourite;
 
@@ -112,12 +91,12 @@ function displayFavourites() {
     const name = place.name || "Unnamed Place";
 
     const image =
-      place.image || place.images?.[0] || "../assets/images/placeholder.jpg";
+    place.image || place.images?.[0] || "../assets/images/placeholder.jpg";
 
     const location = place.location || "Edo State";
 
     const description =
-      place.description || "Discover this amazing destination in Edo State.";
+    place.description || "Discover this amazing destination in Edo State.";
 
     const card = document.createElement("article");
 
@@ -125,96 +104,91 @@ function displayFavourites() {
 
     card.innerHTML = `
 
-            <img
-                src="${image}"
-                alt="${name}"
-            >
+    <img
+      src="${image}"
+      alt="${name}"
+    >
 
 
-            <div class="favourite-content">
+    <div class="favourite-content">
 
-                <h3>
-                    ${name}
-                </h3>
-
-
-                <p class="favourite-location">
-                    📍 ${location}
-                </p>
+      <h3>
+          ${name}
+      </h3>
 
 
-                <p class="favourite-description">
-                    ${description.substring(0, 120)}
-                    ${description.length > 120 ? "..." : ""}
-                </p>
+      <p class="favourite-location">
+          📍 ${location}
+      </p>
 
 
-                <div class="favourite-actions">
-
-                    <a
-                        href="attraction-details.html?id=${id}"
-                        class="view-btn"
-                    >
-                        View Details
-                    </a>
+      <p class="favourite-description">
+          ${description.substring(0, 120)}
+          ${description.length > 120 ? "..." : ""}
+      </p>
 
 
-                    <button
-                        class="remove-btn"
-                        onclick="removeFavourite('${favourite._id}')"
-                    >
-                        Remove
-                    </button>
+      <div class="favourite-actions">
 
-                </div>
+          <a
+              href="attraction-details.html?id=${id}"
+              class="view-btn"
+          >
+              View Details
+          </a>
 
-            </div>
 
-        `;
+          <button
+              class="remove-btn"
+              onclick="removeFavourite('${favourite._id}')"
+          >
+              Remove
+          </button>
+
+      </div>
+
+    </div>
+
+    `;
 
     favouritesContainer.appendChild(card);
-  });
-}
+    });
+    }
 
-// ========================================
-// REMOVE FAVOURITE
-// ========================================
 
-async function removeFavourite(favouriteId) {
-  const token = getToken();
 
-  if (!token) {
+    async function removeFavourite(favouriteId) {
+    const token = getToken();
+
+    if (!token) {
     window.location.href = "login.html";
 
     return;
-  }
+    }
 
-  const confirmRemove = confirm("Remove this place from your favourites?");
+    const confirmRemove = confirm("Remove this place from your favourites?");
 
-  if (!confirmRemove) {
+    if (!confirmRemove) {
     return;
-  }
+    }
 
-  try {
+    try {
     await apiRequest(`/favourites/${favouriteId}`, {
-      method: "DELETE",
+    method: "DELETE",
 
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+    headers: {
+    Authorization: `Bearer ${token}`,
+    },
     });
 
-    // Reload favourites
     await loadFavourites();
-  } catch (error) {
+    } catch (error) {
     console.error("Remove favourite error:", error);
 
     alert(error.message || "Unable to remove favourite.");
-  }
-}
+    }
+    }
 
-// ========================================
-// INITIALIZE
-// ========================================
 
-loadFavourites();
+
+    loadFavourites();

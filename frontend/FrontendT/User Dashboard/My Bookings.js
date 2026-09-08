@@ -24,130 +24,129 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     bookingsContainer.innerHTML = "";
 
-    bookings.forEach((booking) => {
-      const card = document.createElement("div");
-      card.className = "card";
+bookings.forEach((booking) => {
+  const card = document.createElement("div");
+  card.className = "card";
 
-      const bookingId =
-        booking._id || booking.id || "N/A";
+  const bookingId =
+    booking._id || booking.id || "N/A";
 
-      const status =
-        booking.status || "pending";
+  const status =
+    booking.status || "pending";
 
-      const title =
-        booking.title ||
-        booking.attraction?.name ||
-        booking.hotel?.name ||
-        "Tour Edo Booking";
+  const title =
+    booking.title ||
+    booking.attraction?.name ||
+    booking.hotel?.name ||
+    "Tour Edo Booking";
 
-      const date =
-        booking.date ||
-        booking.bookingDate ||
-        booking.checkIn ||
-        "Date not available";
+  const date =
+    booking.date ||
+    booking.bookingDate ||
+    booking.checkIn ||
+    "Date not available";
 
-      card.innerHTML = `
-        <div class="card-img-holder">
-          <img
-            src="Images/EdBackground.jpg"
-            alt="Tour Edo booking"
-          >
+  card.innerHTML = `
+    <div class="card-img-holder">
+      <img
+        src="Images/EdBackground.jpg"
+        alt="Tour Edo booking"
+      >
 
-          <span class="favorite-icon">
-            <i class="fa-solid fa-ticket"></i>
-          </span>
-        </div>
+      <span class="favorite-icon">
+        <i class="fa-solid fa-ticket"></i>
+      </span>
+    </div>
 
-        <div class="card-details">
-          <h3>${title}</h3>
+    <div class="card-details">
+      <h3>${title}</h3>
 
-          <p>
-            <i class="fa-solid fa-calendar-days"></i>
-            ${date}
-          </p>
+      <p>
+        <i class="fa-solid fa-calendar-days"></i>
+        ${date}
+      </p>
 
-          <p>
-            <i class="fa-solid fa-hashtag"></i>
-            Booking ID: ${bookingId}
-          </p>
+      <p>
+        <i class="fa-solid fa-hashtag"></i>
+        Booking ID: ${bookingId}
+      </p>
 
-          <div class="card-footer">
+      <div class="card-footer">
 
-            <span class="rating">
-              <i class="fa-solid fa-circle-check"></i>
-              ${status}
-            </span>
+        <span class="rating">
+          <i class="fa-solid fa-circle-check"></i>
+          ${status}
+        </span>
 
-            <button
-              class="btn-book cancel-booking"
-              data-id="${bookingId}"
-            >
-              Cancel
-            </button>
+        <button
+          class="btn-book cancel-booking"
+          data-id="${bookingId}"
+        >
+          Cancel
+        </button>
 
-          </div>
-        </div>
-      `;
+      </div>
+    </div>
+  `;
 
-      bookingsContainer.appendChild(card);
-    });
+  bookingsContainer.appendChild(card);
+});
 
-    // CANCEL BOOKING
-    document
-      .querySelectorAll(".cancel-booking")
-      .forEach((button) => {
+document
+.querySelectorAll(".cancel-booking")
+.forEach((button) => {
 
-        button.addEventListener("click", async () => {
+button.addEventListener("click", async () => {
 
-          const bookingId =
-            button.dataset.id;
+  const bookingId =
+    button.dataset.id;
 
-          const confirmed = confirm(
-            "Are you sure you want to cancel this booking?"
-          );
+  const confirmed = confirm(
+    "Are you sure you want to cancel this booking?"
+  );
 
-          if (!confirmed) return;
+  if (!confirmed) return;
 
-          try {
+  try {
 
-            const result = await apiRequest(
-              `/bookings/${bookingId}`,
-              {
-                method: "DELETE"
-              }
-            );
+    const result = await apiRequest(
+      `/bookings/${bookingId}`,
+      {
+        method: "DELETE"
+      }
+    );
 
-            alert(
-              result.message ||
-              "Booking cancelled successfully."
-            );
+    alert(
+      result.message ||
+      "Booking cancelled successfully."
+    );
 
-            window.location.reload();
-
-          } catch (error) {
-
-            console.error(
-              "Cancel booking error:",
-              error
-            );
-
-            alert(error.message);
-          }
-        });
-      });
+    window.location.reload();
 
   } catch (error) {
 
     console.error(
-      "Loading bookings error:",
+      "Cancel booking error:",
       error
     );
 
-    bookingsContainer.innerHTML = `
-      <div class="empty-bookings">
-        <h3>Unable to load bookings</h3>
-        <p>${error.message}</p>
-      </div>
-    `;
+    alert(error.message);
   }
+    });
+  });
+
+} catch (error) {
+
+console.error(
+  "Loading bookings error:",
+  error
+);
+
+bookingsContainer.innerHTML = `
+  <div class="empty-bookings">
+    <h3>Unable to load bookings</h3>
+    <p>${error.message}</p>
+  </div>
+`;
+}
 });
