@@ -6,7 +6,7 @@ const registerBtn = document.querySelector("#registerBtn");
 registerBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   const userData = {
-    username: username.value,
+    name: username.value,
     email: email.value,
     password: password.value,
   };
