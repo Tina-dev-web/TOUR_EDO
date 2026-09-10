@@ -1,194 +1,229 @@
+document.addEventListener("DOMContentLoaded", () => {
 
-const favouritesContainer = document.getElementById("favouritesContainer");
-
-const loading = document.getElementById("loading");
-
-const emptyState = document.getElementById("emptyState");
-
-const errorMessage = document.getElementById("errorMessage");
-
-let favourites = [];
-
-
-    function getToken() {
-      return localStorage.getItem("token");
-    }
-
-
-
-    async function loadFavourites() {
-      const token = getToken();
-
-      
-    if (!token) {
-    loading.style.display = "none";
-
-    errorMessage.style.display = "block";
-
-    errorMessage.innerHTML = `
-    <p>
-      Please login to view your favourites.
-    </p>
-
-    <a
-      href="login.html"
-      class="cta-btn"
-    >
-      Login
-    </a>
-    `;
-
+  if (!requireLogin("../../Login.html")) {
     return;
-    }
+  }
+
+  const container =
+    document.querySelector(".favorites-grid") ||
+    document.getElementById("favouritesContainer");
+
+  const emptyState =
+    document.querySelector(".empty-state") ||
+    document.getElementById("emptyState");
+
+
+  async function loadFavourites() {
 
     try {
-    loading.style.display = "block";
 
-    emptyState.style.display = "none";
+      const data = await apiRequest("/favourites");
 
-    errorMessage.style.display = "none";
+      const favourites = data.favourites || [];
 
-    const response = await getData("/favourites", {
-    headers: {
-    Authorization: `Bearer ${token}`,
-    },
-    });
+      renderFavourites(favourites);
 
-    console.log("Favourites response:", response);
-
-    favourites = response.favourites || response.data || [];
-
-    loading.style.display = "none";
-
-    if (favourites.length === 0) {
-    emptyState.style.display = "block";
-
-    return;
-    }
-
-    displayFavourites();
     } catch (error) {
-    console.error("Favourites error:", error);
 
-    loading.style.display = "none";
+      console.error(error);
 
-    errorMessage.style.display = "block";
-
-    errorMessage.textContent = error.message || "Unable to load favourites.";
+      if (container) {
+        container.innerHTML =
+          `<p class="error-message">${escapeHtml(error.message)}</p>`;
+      }
     }
-    }
-
-    function displayFavourites() {
-    favouritesContainer.innerHTML = "";
-
-    favourites.forEach((favourite) => {
+  }
 
 
-    const place = favourite.attraction || favourite.place || favourite;
+  function renderFavourites(favourites) {
 
-    const id = place._id || favourite.attractionId;
+    if (!container) return;
 
-    const name = place.name || "Unnamed Place";
-
-    const image =
-    place.image || place.images?.[0] || "../assets/images/placeholder.jpg";
-
-    const location = place.location || "Edo State";
-
-    const description =
-    place.description || "Discover this amazing destination in Edo State.";
-
-    const card = document.createElement("article");
-
-    card.className = "favourite-card";
-
-    card.innerHTML = `
-
-    <img
-      src="${image}"
-      alt="${name}"
-    >
+    container.innerHTML = "";
 
 
-    <div class="favourite-content">
+    if (!favourites.length) {
 
-      <h3>
-          ${name}
-      </h3>
+      if (emptyState) {
+        emptyState.style.display = "block";
+      }
 
-
-      <p class="favourite-location">
-          📍 ${location}
-      </p>
-
-
-      <p class="favourite-description">
-          ${description.substring(0, 120)}
-          ${description.length > 120 ? "..." : ""}
-      </p>
-
-
-      <div class="favourite-actions">
-
-          <a
-              href="attraction-details.html?id=${id}"
-              class="view-btn"
-          >
-              View Details
-          </a>
-
-
-          <button
-              class="remove-btn"
-              onclick="removeFavourite('${favourite._id}')"
-          >
-              Remove
-          </button>
-
-      </div>
-
-    </div>
-
-    `;
-
-    favouritesContainer.appendChild(card);
-    });
+      return;
     }
 
 
-
-    async function removeFavourite(favouriteId) {
-    const token = getToken();
-
-    if (!token) {
-    window.location.href = "login.html";
-
-    return;
+    if (emptyState) {
+      emptyState.style.display = "none";
     }
 
-    const confirmRemove = confirm("Remove this place from your favourites?");
 
-    if (!confirmRemove) {
-    return;
-    }
+    favourites.forEach(favourite => {
+
+      const target =
+        favourite.target &&
+        typeof favourite.target === "object"
+          ? favourite.target
+          : null;
+
+
+      const name =
+        target?.name || "Saved place";
+
+
+const location =
+target?.location || "Edo State";
+
+
+const image =
+target?.image ||
+target?.images?.[0] ||
+"../Images/EdBackground.jpg";
+
+
+const targetId =
+target?._id ||
+favourite.target ||
+"";
+
+
+const card = document.createElement("article");
+
+card.className = "fav-card";
+
+
+card.innerHTML = `
+
+<div class="fav-img-holder">
+
+<img
+  src="${image}"
+  alt="${escapeHtml(name)}"
+  onerror="this.src='../Images/EdBackground.jpg'"
+>
+
+<button
+  class="fav-toggle active"
+  data-id="${favourite._id}"
+  aria-label="Remove from favourites"
+>
+  <i class="fa-solid fa-heart"></i>
+</button>
+
+</div>
+
+
+<div class="fav-details">
+
+<div class="fav-title-row">
+  <h3>${escapeHtml(name)}</h3>
+</div>
+
+<p>
+  <i class="fa-solid fa-location-dot"></i>
+  ${escapeHtml(location)}
+</p>
+
+
+<div class="fav-footer">
+
+  <button
+    class="btn-book"
+    data-book="${targetId}"
+  >
+    Book Now
+  </button>
+
+  <button
+    class="btn-book remove-favourite"
+    data-id="${favourite._id}"
+  >
+    Remove
+  </button>
+
+</div>
+
+</div>
+`;
+
+
+container.appendChild(card);
+
+});
+
+
+
+container
+.querySelectorAll(".remove-favourite, .fav-toggle")
+.forEach(button => {
+
+  button.addEventListener("click", async () => {
+
+    const favouriteId = button.dataset.id;
+
+    if (!favouriteId) return;
 
     try {
-    await apiRequest(`/favourites/${favouriteId}`, {
-    method: "DELETE",
 
-    headers: {
-    Authorization: `Bearer ${token}`,
-    },
-    });
+      button.disabled = true;
 
-    await loadFavourites();
+      await apiRequest(
+        `/favourites/${favouriteId}`,
+        {
+          method: "DELETE"
+        }
+      );
+
+      await loadFavourites();
+
     } catch (error) {
-    console.error("Remove favourite error:", error);
 
-    alert(error.message || "Unable to remove favourite.");
+      button.disabled = false;
+
+      alert(error.message);
     }
-    }
+  });
+
+});
 
 
+// BOOK
 
-    loadFavourites();
+container
+.querySelectorAll("[data-book]")
+.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const id = button.dataset.book;
+
+    if (!id) return;
+
+    window.location.href =
+      `../Booking.html?service=${encodeURIComponent(id)}&serviceType=attraction`;
+
+  });
+
+});
+
+}
+
+
+function escapeHtml(value) {
+
+return String(value ?? "").replace(
+/[&<>'"]/g,
+character => ({
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  "'": "&#39;",
+  '"': "&quot;"
+})[character]
+);
+
+}
+
+
+loadFavourites();
+
+});

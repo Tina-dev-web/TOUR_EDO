@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.getElementById('menubtn');
   const closeBtn = document.getElementById('closebtn');
 
-  // Mobile nav drawer
   menuBtn.addEventListener('click', () => 
   sidebar.classList.add('show-sidebar'));
 

@@ -131,40 +131,40 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
 
-      try {
+try {
 
-        const data = await apiRequest(
-          "/users/profile",
-          {
-            method: "DELETE"
-          }
-        );
-
-
-        alert(
-          data.message ||
-          "Account deleted successfully."
-        );
+  const data = await apiRequest(
+    "/users/profile",
+    {
+      method: "DELETE"
+    }
+  );
 
 
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
+  alert(
+    data.message ||
+    "Account deleted successfully."
+  );
 
 
-        window.location.href =
-          "../../Login.html";
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
 
 
-      } catch (error) {
+  window.location.href =
+    "../../Login.html";
 
-        console.error(
-          "Delete account error:",
-          error
-        );
 
-        alert(error.message);
+} catch (error) {
 
-      }
+  console.error(
+    "Delete account error:",
+    error
+  );
+
+  alert(error.message);
+
+}
 
     }
   );
