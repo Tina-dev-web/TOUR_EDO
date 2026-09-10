@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Welcome route
+//welcome routes
 app.get("/", (req, res) => {
   res.json({
     success: true,

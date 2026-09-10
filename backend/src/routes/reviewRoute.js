@@ -2,6 +2,7 @@ const express = require("express");
 
 const {
   createReview,
+  getReviews,
   getReview,
   updateReview,
   deleteReview,
@@ -14,6 +15,8 @@ const router = express.Router();
 // Create review
 router.post("/", protectedAuth, createReview);
 
+// Get all reviews
+router.get("/", getReviews);
 // Get review
 router.get("/:id", getReview);
 

@@ -87,6 +87,28 @@ const createReview = async (req, res) => {
 };
 
 
+// GET ALL REVIEWS
+
+const getReviews = async (req, res) => {
+  try {
+    const reviews = await Review.find()
+      .populate("user", "name email")
+      .populate("booking");
+
+    return res.status(200).json({
+      success: true,
+      reviews,
+    });
+  } catch (error) {
+    console.error("Get reviews error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 // GET REVIEW
 
 
@@ -194,7 +216,9 @@ const deleteReview = async (req, res) => {
 
 module.exports = {
   createReview,
+  getReviews,
   getReview,
   updateReview,
   deleteReview,
+
 };
