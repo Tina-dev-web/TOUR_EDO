@@ -1,24 +1,29 @@
-// DOM Element Selection
 const sideMenu = document.querySelector("#sidebar");
-const menuBtn = document.querySelector("#menubtn");
-const closeBtn = document.querySelector("#closebtn");
+const profileForm = document.querySelector(".settings-form");
 
-// Open Mobile Navigation Drawer
-menuBtn.addEventListener("click", () => {
-  sideMenu.classList.add("active");
-});
+const loadProfile = async () => {
+  const { user } = await apiRequest("/users/profile");
+  document.querySelector("#admin-name").value = user.name || "";
+  document.querySelector("#admin-email").value = user.email || "";
+};
 
-// Close Mobile Navigation Drawer
-closeBtn.addEventListener("click", () => {
-  sideMenu.classList.remove("active");
-});
-
-// Close Drawer when clicking outside of the sidebar
-document.addEventListener("click", (event) => {
-  const isClickInsideSidebar = sideMenu.contains(event.target);
-  const isClickOnMenuBtn = menuBtn.contains(event.target);
-
-  if (!isClickInsideSidebar && !isClickOnMenuBtn && sideMenu.classList.contains("active")) {
-    sideMenu.classList.remove("active");
+profileForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  try {
+    const response = await apiRequest("/users/profile", {
+      method: "PUT",
+      body: JSON.stringify({
+        name: document.querySelector("#admin-name").value.trim(),
+        email: document.querySelector("#admin-email").value.trim(),
+      }),
+    });
+    localStorage.setItem("user", JSON.stringify(response.user));
+    alert("Profile updated successfully.");
+  } catch (error) {
+    alert(error.message);
   }
 });
+
+document.querySelector("#menubtn").addEventListener("click", () => sideMenu.classList.add("active"));
+document.querySelector("#closebtn").addEventListener("click", () => sideMenu.classList.remove("active"));
+loadProfile().catch((error) => alert(error.message));

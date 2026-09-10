@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <!-- Sidebar Navigation -->
-    <aside>
+    <aside id="sidebar">
       <div class="top">
         <div class="logo">
           <img src="Images/Filter.png" alt="Logo">
@@ -41,7 +41,6 @@
         <a href="Messages.html">
           <span><i class="fa-solid fa-message"></i></span>
           <h3>Messages</h3>
-          <span class="message-count">3</span>
         </a>
         <a href="Profile.html">
           <span><i class="fa-solid fa-user"></i></span>
@@ -57,6 +56,9 @@
     <!-- Main Bookings Section -->
     <main class="main-content">
       <header class="main-header">
+        <button id="menubtn" class="menu-trigger" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <h1>My Bookings</h1>
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -70,6 +72,7 @@
         <button class="category-btn">Upcoming</button>
         <button class="category-btn">Completed</button>
         <button class="category-btn">Cancelled</button>
+        <button class="category-btn">Add Booking</button>
       </div>
 
       <!-- Bookings Cards Container -->

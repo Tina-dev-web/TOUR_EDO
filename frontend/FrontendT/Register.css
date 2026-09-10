@@ -228,3 +228,74 @@ body{
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
+
+/* ..........RESPONSIVENESS.......... */
+
+@media screen and (max-width: 600px) {
+  body{
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  .container{
+    width: 92%;
+    max-width: 400px;
+    height: auto;
+    min-height: 560px;
+    padding: 20px;
+  }
+
+  .container .form-box{
+    padding: 30px 20px;
+  }
+
+  .container img{
+    width: 170px;
+    height: 155px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .form-box h1{
+    font-size: 34px;
+    margin-top: 3.4em;
+    margin-bottom: 20px;
+  }
+
+  .popUp{
+    width: 88%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .container{
+    width: 94%;
+    padding: 14px;
+  }
+
+  .container .form-box{
+    padding: 20px 14px;
+  }
+
+  .container img{
+    width: 140px;
+    height: 128px;
+  }
+
+  .form-box h1{
+    font-size: 28px;
+    margin-top: 3em;
+  }
+
+  .form-box input, select{
+    padding: 10px;
+    padding-left: 36px;
+    font-size: 14px;
+  }
+
+  .form-box button{
+    font-size: 15px;
+    padding: 9px;
+  }
+}

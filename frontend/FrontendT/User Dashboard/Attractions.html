@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="container">
-    <aside>
+    <aside id="sidebar">
       <div class="top">
         <div class="logo">
           <img src="Images/Filter.png" alt="Tourism Logo">
@@ -32,14 +32,13 @@
           <span><i class="fa-solid fa-receipt"></i></span>
           <h3>My Bookings</h3>
         </a>
-        <a href="Favorites.html">
+        <a href="Favourites.html">
           <span><i class="fa-solid fa-heart"></i></span>
           <h3>Favorites</h3>
         </a>
         <a href="Messages.html">
           <span><i class="fa-solid fa-message"></i></span>
           <h3>Messages</h3>
-          <span class="message-count">3</span>
         </a>
       
         <a href="Profile.html">
@@ -57,9 +56,10 @@
       
       <header class="main-header">
         <div class="mobile-header">
-        <button id="menubtn" class="menu-trigger">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+          <button id="menubtn" class="menu-trigger" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
 
         <h1>Explore Attractions</h1>
         <div class="search-box">
@@ -75,8 +75,8 @@
         <button class="category-btn">Monuments</button>
       </div>
 
-      <div class="attractions-grid">
-        <div class="card">
+      <div class="attractions-grid" id="attractionsGrid">
+        <!-- <div class="card">
           <div class="card-img-holder">
             <img src="Images/Royal_Palace_of_the_Oba_of_Benin.jpg" alt="Attraction Image">
             <span class="favorite-icon"><i class="fa-regular fa-heart"></i></span>
@@ -193,7 +193,7 @@
               <button class="btn-book">Explore</button>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
 

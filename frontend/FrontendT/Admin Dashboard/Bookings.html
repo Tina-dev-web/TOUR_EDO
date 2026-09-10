@@ -43,7 +43,6 @@
         <a href="Messages.html">
           <span> <i class="fa-solid fa-message"></i></span>
           <h3>Messages</h3>
-          <span class="message-count">26</span>
         </a>
         <a href="Report.html">
           <span><i class="fa-solid fa-file-circle-exclamation"></i></span>
@@ -72,10 +71,12 @@
         <h2>Add New Booking</h2>
         <form>
           <label for="tourist">Tourist Name</label>
-          <input type="text" id="tourist" placeholder="Enter tourist name">
+          <input type="text" id="tourist" placeholder="Your account" disabled>
 
           <label for="destination">Destination</label>
-          <input type="text" id="destination" placeholder="Enter destination">
+          <select id="destination" required>
+            <option value="">Loading destinations...</option>
+          </select>
 
           <label for="date">Booking Date</label>
           <input type="date" id="date">
@@ -103,28 +104,7 @@
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>Royal Palace of Oba</td>
-              <td>2026-09-10</td>
-              <td>Confirmed</td>
-              <td>
-                <button class="btn btn-edit">Edit <i class="fa-solid fa-pen"></i></button>
-                <button class="btn btn-delete">Delete <i class="fa-solid fa-trash"></i></button>
-              </td>
-            </tr>
-            <tr>
-              <td>Amina Yusuf</td>
-              <td>Okomu National Park</td>
-              <td>2026-09-15</td>
-              <td>Pending</td>
-              <td>
-                <button class="btn btn-edit">Edit <i class="fa-solid fa-pen"></i></button>
-                <button class="btn btn-delete">Delete <i class="fa-solid fa-trash"></i></button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="bookings-body"></tbody>
         </table>
       </section>
     </main>
@@ -132,5 +112,7 @@
 <script src="../js/api.js"></script>
 <script src="Bookings.js"></script>
 
+  <script src="../config.js"></script>
+  <!-- <script src="Bookings.js"></script> -->
 </body>
 </html>

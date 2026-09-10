@@ -1,3 +1,20 @@
+// Sidebar toggle
+const sidebar = document.getElementById('sidebar-container');
+const menuBtn = document.getElementById('menubtn');
+const closeBtn = document.getElementById('closebtn');
+
+menuBtn.addEventListener('click', () => {
+  sidebar.classList.add('show-sidebar');
+});
+
+closeBtn.addEventListener('click', () => {
+  sidebar.classList.remove('show-sidebar');
+});
+// End of sidebar toggle
+
+
+
+
 document.addEventListener("DOMContentLoaded", async () => {
 
   const infoForm = document.getElementById("infoForm");

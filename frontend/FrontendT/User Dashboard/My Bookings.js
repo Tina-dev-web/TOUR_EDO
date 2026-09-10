@@ -1,3 +1,17 @@
+const sidebar = document.getElementById('sidebar');
+const menuBtn = document.getElementById('menubtn');
+const closeBtn = document.getElementById('closebtn');
+
+menuBtn.addEventListener('click', () => {
+  sidebar.classList.add('show-sidebar');
+});
+
+closeBtn.addEventListener('click', () => {
+  sidebar.classList.remove('show-sidebar');
+});
+// ==========================================================
+
+
 document.addEventListener("DOMContentLoaded", async () => {
 
   if (!requireLogin("../../Login.html")) {

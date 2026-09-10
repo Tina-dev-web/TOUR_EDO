@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="container">
-    <aside>
+    <aside id="sidebar-container">
       <div class="top">
         <div class="logo">
           <img src="Images/Filter.png" alt="Logo">
@@ -39,7 +39,6 @@
         <a href="Messages.html">
           <span><i class="fa-solid fa-message"></i></span>
           <h3>Messages</h3>
-          <span class="message-count">3</span>
         </a>
         <a href="Profile.html">
           <span><i class="fa-solid fa-user"></i></span>
@@ -55,7 +54,13 @@
     <!-- Main Favorites Section -->
     <main class="main-content">
       <header class="main-header">
-        <h1>Favorites</h1>
+       <div class="mobile-header">
+        <button id="menubtn" class="menu-trigger">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h2>Favourites</h2>
+      </div>
+
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search your saved places...">
@@ -70,80 +75,15 @@
       </div>
 
       <!-- Favorites grid -->
-      <div class="favorites-grid">
-        <div class="fav-card">
-          <div class="fav-img-holder">
-            <img src="Images/EdBackground.jpg" alt="Oba's Palace">
-            <button class="fav-toggle active" aria-label="Remove from favorites">
-              <i class="fa-solid fa-heart"></i>
-            </button>
-            <span class="fav-tag">Culture &amp; Heritage</span>
-          </div>
-          <div class="fav-details">
-            <div class="fav-title-row">
-              <h3>Oba's Palace, Benin City</h3>
-              <span class="fav-rating"><i class="fa-solid fa-star"></i> 4.8</span>
-            </div>
-            <p><i class="fa-solid fa-location-dot"></i> Benin City, Edo State</p>
-            <div class="fav-footer">
-              <span class="fav-price">₦5,000 <small>/ person</small></span>
-              <button class="btn-book">Book Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="fav-card">
-          <div class="fav-img-holder">
-            <img src="Images/EdBackground.jpg" alt="Okomu National Park">
-            <button class="fav-toggle active" aria-label="Remove from favorites">
-              <i class="fa-solid fa-heart"></i>
-            </button>
-            <span class="fav-tag">Nature</span>
-          </div>
-          <div class="fav-details">
-            <div class="fav-title-row">
-              <h3>Okomu National Park</h3>
-              <span class="fav-rating"><i class="fa-solid fa-star"></i> 4.6</span>
-            </div>
-            <p><i class="fa-solid fa-location-dot"></i> Ovia South-West, Edo State</p>
-            <div class="fav-footer">
-              <span class="fav-price">₦3,500 <small>/ person</small></span>
-              <button class="btn-book">Book Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="fav-card">
-          <div class="fav-img-holder">
-            <img src="Images/EdBackground.jpg" alt="Somorika Hills">
-            <button class="fav-toggle active" aria-label="Remove from favorites">
-              <i class="fa-solid fa-heart"></i>
-            </button>
-            <span class="fav-tag">Adventure</span>
-          </div>
-          <div class="fav-details">
-            <div class="fav-title-row">
-              <h3>Somorika Hills</h3>
-              <span class="fav-rating"><i class="fa-solid fa-star"></i> 4.4</span>
-            </div>
-            <p><i class="fa-solid fa-location-dot"></i> Akoko-Edo, Edo State</p>
-            <div class="fav-footer">
-              <span class="fav-price">₦2,000 <small>/ person</small></span>
-              <button class="btn-book">Book Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Empty state: shown instead of the grid above when the user has no favorites saved -->
-      <!--
-      <div class="empty-state">
+      <p id="loading" class="text-muted">Loading favourites...</p>
+      <p id="errorMessage" class="text-muted" hidden></p>
+      <div id="emptyState" class="empty-state" hidden>
         <i class="fa-regular fa-heart"></i>
-        <h3>No favorites yet</h3>
-        <p>Places you heart while browsing will show up here.</p>
+        <h3>No favourites yet</h3>
+        <p>Places you save while browsing will show up here.</p>
         <a href="Attractions.html" class="btn-book">Explore Attractions</a>
       </div>
-      -->
+      <div id="favouritesContainer" class="favorites-grid"></div>
     </main>
 
     <!-- Right Profile Panel -->
@@ -151,11 +91,13 @@
       <div class="profile-section">
         <div class="profile-photo"></div>
         <div class="profile-info">
-          <b>User Account</b>
-          <p class="text-muted">Tourist Explorer</p>
+          <b id="profile-name">Loading...</b>
+          <p class="text-muted" id="profile-role"></p>
         </div>
       </div>
     </div>
   </div>
+  <script src="../config.js"></script>
+  <script src="Favourites.js"></script>
 </body>
 </html>

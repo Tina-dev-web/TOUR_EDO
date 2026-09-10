@@ -56,7 +56,6 @@
         <a href="Messages.html">
           <span><i class="fa-solid fa-message"></i></span>
           <h3>Messages</h3>
-          <span class="message-count">26</span>
         </a>
         <a href="Report.html">
           <span><i class="fa-solid fa-file-circle-exclamation"></i></span>
@@ -95,8 +94,8 @@
           </div>
           <div>
             <h3>Total Tourists</h3>
-            <h2>1,250</h2>
-            <p><span class="success">+12%</span> this month</p>
+            <h2 id="total-tourists">--</h2>
+            <p>Registered users</p>
           </div>
         </div>
 
@@ -105,9 +104,9 @@
             <i class="fa-solid fa-user-check"></i>
           </div>
           <div>
-            <h3>Active Tourists</h3>
-            <h2>1,086</h2>
-            <p><span class="success">+8%</span> this month</p>
+            <h3>New Tourists</h3>
+            <h2 id="new-tourists">--</h2>
+            <p>This month</p>
           </div>
         </div>
 
@@ -116,9 +115,9 @@
             <i class="fa-solid fa-user-plus"></i>
           </div>
           <div>
-            <h3>New Tourists</h3>
-            <h2>164</h2>
-            <p><span class="primary">This month</span></p>
+            <h3>Guides</h3>
+            <h2 id="guides-count">--</h2>
+            <p>Registered guides</p>
           </div>
         </div>
 
@@ -127,9 +126,9 @@
             <i class="fa-solid fa-earth-africa"></i>
           </div>
           <div>
-            <h3>Countries</h3>
-            <h2>24</h2>
-            <p>Tourists from around the world</p>
+            <h3>Roles</h3>
+            <h2 id="roles-count">--</h2>
+            <p>Distinct user roles</p>
           </div>
         </div>
       </div>
@@ -151,8 +150,8 @@
         <!-- Filters -->
         <div class="tourist-filters">
           <button class="filter-btn active-filter">All Tourists</button>
-          <button class="filter-btn">Active</button>
-          <button class="filter-btn">Inactive</button>
+          <button class="filter-btn">Tourists</button>
+          <button class="filter-btn">Guides</button>
           <button class="filter-btn">Newest</button>
         </div>
 
@@ -163,63 +162,29 @@
               <tr>
                 <th scope="col"><input type="checkbox" id="selectAll"></th>
                 <th scope="col">Tourist</th>
-                <th scope="col">Country</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Bookings</th>
+                <th scope="col">Role</th>
+                <th scope="col">Email</th>
+                <th scope="col">Account ID</th>
                 <th scope="col">Date Joined</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Tourist Row 1 -->
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>
-                  <div class="tourist-info">
-                    <div class="tourist-image">
-                      <img src="Images/EdBackground.jpg" alt="John Smith Profile">
-                    </div>
-                    <div>
-                      <h4>John Smith</h4>
-                      <p>johnsmith@gmail.com</p>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="country">🇬🇧 United Kingdom</span></td>
-                <td>+44 7123 456789</td>
-                <td>12</td>
-                <td>Aug 20, 2026</td>
-                <td><span class="status active-status">Active</span></td>
-                <td>
-                  <div class="action-buttons">
-                    <button class="view-btn" title="View Tourist"><i class="fa-solid fa-eye"></i></button>
-                    <button class="edit-btn" title="Edit Tourist"><i class="fa-solid fa-pen"></i></button>
-                    <button class="delete-btn" title="Delete Tourist"><i class="fa-solid fa-trash"></i></button>
-                  </div>
-                </td>
-              </tr>
+              <tr><td colspan="8">Loading tourists...</td></tr>
             </tbody>
           </table>
         </div>
 
         <!-- ================= PAGINATION ================= -->
         <div class="pagination">
-          <p class="text-muted">Showing 1–5 of 1,250 tourists</p>
-          <div class="page-buttons">
-            <button aria-label="Previous Page"><i class="fa-solid fa-angle-left"></i></button>
-            <button class="current-page">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button aria-label="Next Page"><i class="fa-solid fa-angle-right"></i></button>
-          </div>
+          <p class="text-muted" id="tourist-count">Loading tourists...</p>
         </div>
       </div>
     </main>
   </div>
 
+  <script src="../config.js"></script>
   <script src="Tourist.js"></script>
 </body>
 </html>

@@ -27,6 +27,13 @@ const userSchema = new mongoose.Schema(
       enum: ["tourist", "guide", "admin"],
       default: "tourist",
     },
+
+    rewardPoints: {
+      type: Number,
+      min: 0,
+      default: 0,
+    },
+
     resetPasswordToken: {
   type: String,
 },

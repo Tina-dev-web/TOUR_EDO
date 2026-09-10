@@ -119,6 +119,23 @@ b{
   color: var(--color-dark);
 }
 
+.dashboard-state {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .primary{
   color: var(--color-primary);
 }
@@ -280,16 +297,6 @@ main{
   color: var(--edo-red);
 }
 
-/* Open Menu Button (Hidden on Desktop) */
-#menubtn {
-  display: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 2rem;
-  color: var(--color-dark);
-  cursor: pointer;
-}
-
  main .date input[type='date']{
   background: transparent;
   color: var(--color-dark);
@@ -431,6 +438,11 @@ main .my-bookings a{
   color: var(--color-primary);
 }
 
+main .my-bookings td a {
+  display: inline;
+  margin: 0;
+}
+
 /* ............RIGHT.........  */
 .right{
   margin-top: 1.4rem;
@@ -536,6 +548,16 @@ main .my-bookings a{
   width: 100%;
 }
 
+.right .top-destinations .item .info {
+  min-width: 0;
+}
+
+.right .top-destinations .item .info h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .right .top-destinations .item .icon{
   padding: 0.6rem;
   color: white;
@@ -633,6 +655,7 @@ main .my-bookings a{
 
   aside{
     position: fixed;
+    top: 0;
     left: -100%;
     background: var(--color-white);
     width: 18rem;
@@ -640,14 +663,11 @@ main .my-bookings a{
     box-shadow: 1rem 3rem 4rem var(--color-light);
     height: 100vh;
     padding-right: var(--card-padding);
-    display: none;
-    animation: showMenu 500ms ease forwards;
+    transition: left 400ms ease;
   }
 
-  @keyframes showMenu {
-    to{
-      left: 0;
-    }
+  aside.show{
+    left: 0;
   }
 
   aside .logo{

@@ -46,7 +46,6 @@
         <a href="Messages.html">
           <i class="fa-solid fa-message" aria-hidden="true"></i>
           <span>Messages</span>
-          <span class="message-count">26</span>
         </a>
         <a href="Report.html">
           <i class="fa-solid fa-file-circle-exclamation" aria-hidden="true"></i>
@@ -80,7 +79,7 @@
             <i class="fa-solid fa-users"></i>
           </div>
           <div class="card-details">
-            <h2>1,245</h2>
+            <h2 id="analytics-tourists">--</h2>
             <p>Total Tourists</p>
           </div>
         </div>
@@ -90,7 +89,7 @@
             <i class="fa-solid fa-plane-departure"></i>
           </div>
           <div class="card-details">
-            <h2>876</h2>
+            <h2 id="analytics-bookings">--</h2>
             <p>Total Bookings</p>
           </div>
         </div>
@@ -100,7 +99,7 @@
             <i class="fa-solid fa-map-location-dot"></i>
           </div>
           <div class="card-details">
-            <h2>32</h2>
+            <h2 id="analytics-destinations">--</h2>
             <p>Destinations</p>
           </div>
         </div>
@@ -110,7 +109,7 @@
             <i class="fa-solid fa-dollar-sign"></i>
           </div>
           <div class="card-details">
-            <h2>$54,300</h2>
+            <h2 id="analytics-revenue">--</h2>
             <p>Revenue</p>
           </div>
         </div>
@@ -128,33 +127,13 @@
                 <th><i class="fa-solid fa-landmark"></i> Top Destination</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>January</td>
-                <td>120</td>
-                <td>Royal Palace of Oba</td>
-              </tr>
-              <tr>
-                <td>February</td>
-                <td>98</td>
-                <td>Okomu National Park</td>
-              </tr>
-              <tr>
-                <td>March</td>
-                <td>145</td>
-                <td>Benin National Museum</td>
-              </tr>
-              <tr>
-                <td>April</td>
-                <td>110</td>
-                <td>Ogba Zoo</td>
-              </tr>
-            </tbody>
+            <tbody id="monthly-bookings-body"></tbody>
           </table>
         </div>
       </section>
     </main>
   </div>
+<script src="../config.js"></script>
 <script src="Analytics.js"></script>
 </body>
 </html>

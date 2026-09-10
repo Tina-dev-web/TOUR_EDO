@@ -8,7 +8,9 @@ async function apiRequest(endpoint, options = {}) {
   const token = getToken();
 
   const headers = {
-    "Content-Type": "application/json",
+    ...(options.body instanceof FormData
+      ? {}
+      : { "Content-Type": "application/json" }),
     ...(options.headers || {}),
   };
 
@@ -21,10 +23,18 @@ async function apiRequest(endpoint, options = {}) {
     headers,
   });
 
-  const data = await response.json();
+  let data = {};
+
+  try {
+    data = await response.json();
+  } catch (error) {
+    data = {};
+  }
 
   if (!response.ok) {
-    throw new Error(data.message || "Something went wrong");
+    const requestError = new Error(data.message || "Something went wrong");
+    requestError.status = response.status;
+    throw requestError;
   }
 
   return data;

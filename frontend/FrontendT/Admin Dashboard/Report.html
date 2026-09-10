@@ -45,7 +45,6 @@
         <a href="Messages.html">
           <span><i class="fa-solid fa-message"></i></span>
           <h3>Messages</h3>
-          <span class="message-count">26</span>
         </a>
         <a href="Report.html" class="active">
           <span><i class="fa-solid fa-file-circle-exclamation"></i></span>
@@ -79,28 +78,28 @@
             <i class="fa-solid fa-chart-pie"></i>
           </div>
           <h2>Booking Summary</h2>
-          <p>876 Bookings</p>
+          <p id="report-bookings">--</p>
         </div>
         <div class="card">
           <div class="report-card-icon">
             <i class="fa-solid fa-map"></i>
           </div>
           <h2>Top Destination</h2>
-          <p>Royal Palace of Oba</p>
+          <p id="report-destination">--</p>
         </div>
         <div class="card">
           <div class="report-card-icon">
             <i class="fa-solid fa-hand-holding-dollar"></i>
           </div>
           <h2>Revenue Report</h2>
-          <p>$54,300</p>
+          <p id="report-revenue">--</p>
         </div>
         <div class="card">
           <div class="report-card-icon">
             <i class="fa-solid fa-user-check"></i>
           </div>
           <h2>Tourist Activity</h2>
-          <p>1,245 Active</p>
+          <p id="report-tourists">--</p>
         </div>
       </section>
 
@@ -116,37 +115,13 @@
               <th><i class="fa-solid fa-map-location-dot"></i> Top Destination</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>January</td>
-              <td>120</td>
-              <td>$7,800</td>
-              <td>Royal Palace of Oba</td>
-            </tr>
-            <tr>
-              <td>February</td>
-              <td>98</td>
-              <td>$6,200</td>
-              <td>Okomu National Park</td>
-            </tr>
-            <tr>
-              <td>March</td>
-              <td>145</td>
-              <td>$9,500</td>
-              <td>Benin National Museum</td>
-            </tr>
-            <tr>
-              <td>April</td>
-              <td>110</td>
-              <td>$8,400</td>
-              <td>Ogba Zoo</td>
-            </tr>
-          </tbody>
+          <tbody id="report-body"></tbody>
         </table>
       </section>
     </main>
   </div>
 
+  <script src="../config.js"></script>
   <script src="Report.js"></script>
 </body>
 </html>

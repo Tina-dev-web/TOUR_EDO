@@ -13,9 +13,9 @@
     <aside id="sidebar">
       <div class="top">
         <div class="logo">
-          <img src="Images/Filter.png">
+          <img src="Images/Filter.png" alt="Tour Edo logo">
         </div>
-        <div class="close" id="closebtn active">
+        <div class="close" id="closebtn">
           <span class="fas fa-times"></span>
         </div>
       </div>
@@ -39,13 +39,12 @@
         <a href="Messages.html">
           <span><i class="fa-solid fa-message"></i></span>
           <h3>Messages</h3>
-          <span class="message-count">3</span>
         </a>
         <a href="Profile.html">
           <span><i class="fa-solid fa-user"></i></span>
           <h3>Profile</h3>
         </a>
-        <a href="/Login.html">
+        <a href="../Login.html" id="logoutLink">
           <span><i class="fa-solid fa-sign-out-alt"></i></span>
           <h3>Logout</h3>
         </a>
@@ -55,29 +54,26 @@
 
     <main>
       <div class="top-bar">
-        <button type="button" id="menubtn active" aria-label="Open menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <h1>Welcome back, Frank</h1>
+        <h1 id="welcomeMessage">Loading your dashboard…</h1>
       </div>
-      
+
       <div class="date">
-        <input type="date" name="" id="">
+        <input type="date" name="dashboard-date" id="dashboardDate" aria-label="Dashboard date">
       </div>
       <div class="insights">
         <div class="trips">
-          <span><i class="fa-solid fa-suitcase-rolling"></i></span>
+          <span><i class="fa-solid fa-suitcase-rolling" aria-hidden="true"></i></span>
           <div class="middle">
             <div class="left">
               <h3>Total Trips</h3>
-              <h1>12</h1>
+              <h1 id="totalTripsValue">—</h1>
             </div>
             <div class="progress">
-              <svg>
-                <circle cx='38' cy='38' r='36'></circle>
+              <svg aria-hidden="true">
+                <circle id="totalTripsCircle" cx="38" cy="38" r="36"></circle>
               </svg>
               <div class="number">
-                <p>81%</p>
+                <p id="totalTripsProgress">—</p>
               </div>
             </div>
           </div>
@@ -85,41 +81,41 @@
         </div>
         <!-------------END OF TRIPS------------>
         <div class="spent">
-          <span><i class="fa-solid fa-money-bill-wave"></i></span>
+          <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i></span>
           <div class="middle">
             <div class="left">
               <h3>Total Spent</h3>
-              <h1>$3,420</h1>
+              <h1 id="totalSpentValue">—</h1>
             </div>
             <div class="progress">
-              <svg>
-                <circle cx='38' cy='38' r='36'></circle>
+              <svg aria-hidden="true">
+                <circle id="totalSpentCircle" cx="38" cy="38" r="36"></circle>
               </svg>
               <div class="number">
-                <p>62%</p>
+                <p id="totalSpentProgress">—</p>
               </div>
             </div>
           </div>
-          <small class="text-muted">This year</small>
+          <small class="text-muted">Paid bookings</small>
         </div>
         <!-------------END OF SPENT------------>
         <div class="rewards">
-          <span><i class="fa-solid fa-award"></i></span>
+          <span><i class="fa-solid fa-award" aria-hidden="true"></i></span>
           <div class="middle">
             <div class="left">
               <h3>Reward Points</h3>
-              <h1>1,240</h1>
+              <h1 id="rewardPointsValue">—</h1>
             </div>
             <div class="progress">
-              <svg>
-                <circle cx='38' cy='38' r='36'></circle>
+              <svg aria-hidden="true">
+                <circle id="rewardPointsCircle" cx="38" cy="38" r="36"></circle>
               </svg>
               <div class="number">
-                <p>44%</p>
+                <p id="rewardPointsProgress">—</p>
               </div>
             </div>
           </div>
-          <small class="text-muted">Redeemable now</small>
+          <small class="text-muted">Available points</small>
         </div>
         <!-------------END OF REWARDS------------>
       </div>
@@ -128,159 +124,56 @@
         <table>
           <thead>
             <tr>
-              <th>Destination</th>
-              <th>Date</th>
-              <th>Amount</th>
-              <th>Status</th>
-              <th></th>
+              <th scope="col">Destination</th>
+              <th scope="col">Date</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Status</th>
+              <th scope="col"><span class="sr-only">Actions</span></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Igun Bronze Casters St.</td>
-              <td>Sept 12</td>
-              <td>$85</td>
-              <td class="success">Confirmed</td>
-              <td class="primary">Details</td>
-            </tr>
-            <tr>
-              <td>Oba Market</td>
-              <td>Sept 20</td>
-              <td>$40</td>
-              <td class="warning">Pending</td>
-              <td class="primary">Details</td>
-            </tr>
-            <tr>
-              <td>Benin Royal Palace</td>
-              <td>Oct 03</td>
-              <td>$120</td>
-              <td class="success">Confirmed</td>
-              <td class="primary">Details</td>
-            </tr>
-            <tr>
-              <td>Emotan Statue Tour</td>
-              <td>Oct 15</td>
-              <td>$60</td>
-              <td class="warning">Pending</td>
-              <td class="primary">Details</td>
-            </tr>
-            <tr>
-              <td>Ogba Zoo & Park</td>
-              <td>Oct 28</td>
-              <td>$50</td>
-              <td class="success">Confirmed</td>
-              <td class="primary">Details</td>
-            </tr>
-          </tbody>
+          <tbody id="bookingsBody"></tbody>
         </table>
-        <a href="#">Show All</a>
+        <a href="My%20Bookings.html">Show All</a>
       </div>
     </main>
     <!-- ...............END OF MAIN.............. -->
 
     <div class="right">
       <div class="top">
-        <button id="menubtn">
-          <span><i class="fa-solid fa-bars"></i></span>
+        <button id="menubtn" aria-label="Open menu">
+          <span><i class="fa-solid fa-bars" aria-hidden="true"></i></span>
         </button>
-        <div class="theme-toggle">
+        <div class="theme-toggle" aria-hidden="true">
           <span class="active"></span>
           <span></span>
         </div>
         <div class="profile">
           <div class="info">
-            <p>Hey, <b>Frank</b></p>
-            <small class="text-muted">Tourist</small>
+            <p id="userGreeting">Loading profile…</p>
+            <small class="text-muted" id="userRole"></small>
           </div>
-          <div class="profile-photo">
-            <!-- <img src="Images/TourEdo.png"> -->
-          </div>
+          <div class="profile-photo" aria-hidden="true"></div>
         </div>
       </div>
       <!-- ......END OF TOP...... -->
       <div class="recent-updates">
         <h2>Recent Updates</h2>
-        <div class="updates">
-          <div class="update">
-            <div class="profile-photo">
-              <!-- <img src="Images/EdBackground.jpg"> -->
-            </div>
-            <div class="message">
-              <p>Your booking for <b>Benin Royal Palace</b> was confirmed</p>
-              <small class="text-muted">2 minutes ago</small>
-            </div>
-          </div>
-          <div class="update">
-            <div class="profile-photo">
-              <!-- <img src="Images/EdBackground.jpg"> -->
-            </div>
-            <div class="message">
-              <p>You earned <b>50 reward points</b> from your last trip</p>
-              <small class="text-muted">1 hour ago</small>
-            </div>
-          </div>
-          <div class="update">
-            <div class="profile-photo">
-              <!-- <img src="Images/EdBackground.jpg"> -->
-            </div>
-            <div class="message">
-              <p>Payment reminder for <b>Oba Market</b> tour</p>
-              <small class="text-muted">3 hours ago</small>
-            </div>
-          </div>
-        </div>
+        <div class="updates" id="updatesList"></div>
       </div>
       <!-- ............END OF RECENT UPDATES.............. -->
       <div class="top-destinations">
         <h2>Top Destinations</h2>
-        <div class="item trending">
-          <div class="icon">
-            <span><i class="fa-solid fa-fire"></i></span>
-          </div>
-          <div class="right">
-            <div class="info">
-              <h3>Benin Royal Palace</h3>
-              <small class="text-muted">Trending this week</small>
-            </div>
-            <h5 class="danger">4.9 <i class="fa-solid fa-star"></i></h5>
-            <h3>$120</h3>
-          </div>
-        </div>
-        <div class="item seasonal">
-          <div class="icon">
-            <span><i class="fa-solid fa-sun"></i></span>
-          </div>
-          <div class="right">
-            <div class="info">
-              <h3>Ogba Zoo & Park</h3>
-              <small class="text-muted">Best in dry season</small>
-            </div>
-            <h5 class="success">4.7 <i class="fa-solid fa-star"></i></h5>
-            <h3>$50</h3>
-          </div>
-        </div>
-        <div class="item">
-          <div class="icon">
-            <span><i class="fa-solid fa-landmark"></i></span>
-          </div>
-          <div class="right">
-            <div class="info">
-              <h3>Igun Bronze Casters St.</h3>
-              <small class="text-muted">UNESCO heritage site</small>
-            </div>
-            <h5 class="primary">4.8 <i class="fa-solid fa-star"></i></h5>
-            <h3>$85</h3>
-          </div>
-        </div>
-        <div class="item explore-more">
+        <div id="destinationsList"></div>
+        <a class="item explore-more" href="Attractions.html">
           <div>
-            <span><i class="fa-solid fa-compass"></i></span>
+            <span><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
             <h3>Explore More Places</h3>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
+  <script src="../config.js"></script>
   <script src="UserDashboard.js"></script>
 </body>
 </html>

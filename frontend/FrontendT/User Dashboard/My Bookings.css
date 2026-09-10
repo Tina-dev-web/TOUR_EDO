@@ -220,6 +220,24 @@ aside .sidebar .message-count {
   gap: 1rem;
 }
 
+/* Mobile menu trigger (hidden on desktop) */
+.menu-trigger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: var(--card-border);
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  box-shadow: var(--shadow-sm);
+}
+
 .search-box {
   display: flex;
   align-items: center;
@@ -497,7 +515,10 @@ aside .sidebar .message-count {
   aside .sidebar h3 { display: block; }
   aside .sidebar a { justify-content: flex-start; padding: 0.85rem 1.15rem; }
 
+  .menu-trigger { display: flex; }
+
   .main-header { flex-direction: column; align-items: stretch; }
+  .main-header > .menu-trigger { align-self: flex-start; }
   .search-box { width: 100%; }
   .attractions-grid { grid-template-columns: 1fr; }
 }
