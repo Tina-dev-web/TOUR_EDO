@@ -144,7 +144,7 @@ function exploreAttraction(id) {
   localStorage.setItem("selectedAttractionId", id);
 
   // Change this filename when your attraction details page is ready.
-  window.location.href = `AttractionDetails.html?id=${id}`;
+  window.location.href = `../../FrontendG/attraction.html?id=${id}`;
 }
 
 
