@@ -1,0 +1,1804 @@
+/* =========================================================
+   TOUREDO - GLOBAL CSS
+   ========================================================= */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================================
+   ROOT VARIABLES
+   ========================================================= */
+
+:root {
+    --burgundy: #5C1A1B;
+    --gold: #D4AF37;
+    --light-gold: #F5D76E;
+    --cream: #F5F0E8;
+    --white: #ffffff;
+    --text-dark: #222222;
+    --text-gray: #666666;
+
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+    --radius: 14px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'Poppins', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   HERO / MAIN WRAPPER
+   ========================================================= */
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--cream);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.hero .nav {
+    width: 100%;
+    min-height: 66px;
+
+    background-color: var(--burgundy);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 8px 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+}
+
+.logo-text,
+.logo-text2 {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.logo-text {
+    color: var(--white);
+}
+
+.logo-text2 {
+    color: var(--light-gold);
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+
+    flex: 1;
+}
+
+.nav-links a {
+    color: var(--light-gold);
+
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--light-gold);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAV BUTTONS
+   ========================================================= */
+
+.btn .btn-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.register-btn,
+.login-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--light-gold);
+    color: var(--burgundy);
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.register-btn:hover,
+.login-btn:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   HERO HEADER
+   ========================================================= */
+
+.hero-header {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    height: 400px;
+
+    overflow: hidden;
+
+    background-color: var(--cream);
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(245, 240, 232, 0.90),
+            rgba(245, 240, 232, 0.20)
+        ),
+        url("Images/TourEdo landingpage_8.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+/* =========================================================
+   GOLD WAVE AT BOTTOM OF HERO
+   ========================================================= */
+
+.hero-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -1px;
+
+    width: 100%;
+    height: 80px;
+
+    background: var(--light-gold);
+
+    clip-path: polygon(
+        0 45%,
+        8% 35%,
+        17% 45%,
+        27% 30%,
+        38% 42%,
+        50% 28%,
+        62% 42%,
+        73% 30%,
+        84% 43%,
+        94% 32%,
+        100% 40%,
+        100% 100%,
+        0 100%
+    );
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.header-content {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 1rem;
+
+    display: flex;
+    align-items: flex-start;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(245, 240, 232, 0.95),
+            rgba(245, 240, 232, 0.25),
+            transparent
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.span-text {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 6rem;
+    padding-left: 7rem;
+
+    max-width: 650px;
+}
+
+.first,
+.second {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 70px;
+    font-weight: 700;
+
+    line-height: 1.05;
+}
+
+.first {
+    color: var(--burgundy);
+}
+
+.second {
+    color: var(--light-gold);
+
+    text-shadow:
+        1px 1px 0 var(--burgundy),
+        2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.third {
+    margin-top: 18px;
+
+    color: var(--text-dark);
+
+    font-family: Cambria, Georgia, "Times New Roman", serif;
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    max-width: 500px;
+}
+
+
+/* =========================================================
+   HERO MAIN FEATURE BAR
+   ========================================================= */
+
+.hero-main {
+    position: relative;
+    z-index: 5;
+
+    width: min(90%, 1000px);
+
+    margin: -35px auto 0;
+
+    padding: 15px 80px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    align-items: center;
+
+    gap: 40px;
+
+    background: white;
+/* var(--cream) */
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+
+    
+}
+
+
+/* =========================================================
+   FEATURE ITEMS
+   ========================================================= */
+
+.landmark,
+.trees,
+.hotel,
+.room-service {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   FEATURE ICONS
+   ========================================================= */
+
+.landmark-image,
+.trees-image,
+.hotel-image,
+.room-service-image {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--burgundy);
+
+    border-radius: 50%;
+
+    color: var(--light-gold);
+
+    font-size: 18px;
+}
+
+.room-service-image {
+    padding: 5px;
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+   ========================================================= */
+
+.landmark-text,
+.trees-text,
+.hotel-text,
+.room-service-text {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.landmark-text strong,
+.trees-text strong,
+.hotel-text strong,
+.room-service-text strong {
+    color: var(--burgundy);
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.landmark-text span,
+.trees-text span,
+.hotel-text span,
+.room-service-text span {
+    margin-top: 7px;
+
+    color: var(--text-dark);
+
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.landmark-image,
+.trees-image,
+.hotel-image,
+.room-service-image {
+    border-radius: 50%;
+    background-color: #5C1A1B;
+}
+
+.landmark-image i,
+.trees-image i,
+.hotel-image ,
+.room-service-image i {
+    color: #F5F0E8;
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   GENERAL SECTION HEADINGS
+   ========================================================= */
+
+.top-attractions,
+.hotel-attractions,
+.Resturant-attractions {
+    width: 100%;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PARK & MUSEUM
+   ========================================================= */
+
+.top-attractions {
+    padding: 70px 70px 15px;
+
+    background: var(--cream);
+}
+
+.attractions-header,
+.hotel-attractions-header,
+.Resturant-attractions-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.attractions-header h2,
+.hotel-attractions-header h2,
+.Resturant-attractions-header h2 {
+    position: relative;
+
+    display: inline-block;
+
+    color: var(--burgundy);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.attractions-header h2::after,
+.Resturant-attractions-header h2::after {
+    content: "";
+
+    display: block;
+
+    width: 34px;
+    height: 3px;
+
+    margin-top: 8px;
+
+    background: var(--gold);
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   ATTRACTION GRID
+   ========================================================= */
+
+.attractions-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   ATTRACTION CARD
+   ========================================================= */
+
+.attraction-card,
+.hotel-attraction-card,
+.Resturant-attraction-card {
+    overflow: hidden;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.attraction-card {
+    background: var(--white);
+}
+
+.attraction-card:hover,
+.hotel-attraction-card:hover,
+.Resturant-attraction-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   CARD IMAGES
+   ========================================================= */
+
+.attraction-card > img,
+.hotel-attraction-card > img,
+.Resturant-attraction-card > img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.4s ease;
+}
+
+.attraction-card:hover > img,
+.hotel-attraction-card:hover > img,
+.Resturant-attraction-card:hover > img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   ATTRACTION CONTENT
+   ========================================================= */
+
+.attraction-content,
+.hotel-attraction-content,
+.Resturant-attraction-content {
+    padding: 25px 14px 11px;
+}
+
+.attraction-content h3,
+.hotel-attraction-content h3,
+.Resturant-attraction-content h3 {
+    margin-bottom: 7px;
+
+    color: var(--burgundy);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.attraction-content p,
+.hotel-attraction-content p,
+.Resturant-attraction-content p {
+    min-height: 33px;
+
+    margin-bottom: 12px;
+
+    color: var(--text-gray);
+
+    font-family: Arial, sans-serif;
+    font-size: 11.5px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   ATTRACTION LOCATION
+   ========================================================= */
+
+.attraction-location,
+.Resturant-attraction-location {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: var(--burgundy);
+
+    font-family: Arial, sans-serif;
+    font-size: 10.5px;
+}
+
+.attraction-location i,
+.Resturant-attraction-location i {
+    color: var(--burgundy);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HOTELS
+   ========================================================= */
+
+.hotel-attractions {
+    margin-top: 15px;
+
+    padding: 25px 70px 25px;
+
+    background: var(--burgundy);
+}
+
+.hotel-attractions-header h2 {
+    color: var(--cream);
+}
+
+.hotel-attractions-header h2::after {
+    content: "";
+
+    display: block;
+
+    width: 34px;
+    height: 3px;
+
+    margin-top: 8px;
+
+    background: var(--light-gold);
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   HOTEL GRID
+   ========================================================= */
+
+.hotel-attractions-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   HOTEL CARD
+   ========================================================= */
+
+.hotel-attraction-card {
+    background: var(--cream);
+}
+
+
+/* =========================================================
+   HOTEL RATING
+   ========================================================= */
+
+.hotel-attraction-location {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+}
+
+.hotel-attraction-location i {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   RESTAURANTS
+   ========================================================= */
+
+.Resturant-attractions {
+    margin-top: 15px;
+
+    padding: 25px 70px 25px;
+
+    background: var(--cream);
+}
+
+.Resturant-attractions-header h2 {
+    color: var(--burgundy);
+}
+
+
+/* =========================================================
+   RESTAURANT GRID
+   ========================================================= */
+
+.Resturant-attractions-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--burgundy);
+}
+
+.footer {
+    position: relative;
+
+    width: 100%;
+
+    padding-top: 1px;
+
+    background: var(--burgundy);
+}
+
+
+/* =========================================================
+   FOOTER MAIN / NEWSLETTER
+   ========================================================= */
+
+.footer-main {
+    position: relative;
+    z-index: 5;
+
+    width: calc(100% - 140px);
+
+    min-height: 95px;
+
+    margin: 50px 70px 0;
+
+    padding: 10px 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: var(--light-gold);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   FOOTER MAIL TEXT
+   ========================================================= */
+
+.mail-text {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--burgundy);
+
+    font-family: "Times New Roman", Georgia, serif;
+
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.mail-text span {
+    margin-top: 5px;
+
+    color: var(--text-dark);
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   FOOTER REGISTER BUTTON
+   ========================================================= */
+
+.footer-btn {
+    flex-shrink: 0;
+}
+
+.footer-btn .Register {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 20px;
+
+    background: var(--burgundy);
+    color: var(--light-gold);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.footer-btn .Register:hover {
+    background: #421314;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER MIDDLE
+   ========================================================= */
+
+.footer-middle {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 0 70px 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        1.2fr;
+
+    align-items: start;
+
+    gap: 60px;
+}
+
+
+/* =========================================================
+   FOOTER LOGO
+   ========================================================= */
+
+.footer-middle .nav {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.footer-middle .logo3 {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+
+.footer-middle .logo img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA
+   ========================================================= */
+
+.contact-on {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.contact-on > span {
+    color: var(--cream);
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    font-size: 12px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.social-links a {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--burgundy);
+    background: var(--light-gold);
+
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--gold);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   QUICK LINKS
+   ========================================================= */
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.quick-links-text {
+    color: var(--cream);
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.quick-links2 {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.quick-links2 a {
+    color: var(--cream);
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    font-size: 12px;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.quick-links2 a:hover {
+    color: var(--light-gold);
+
+    padding-left: 5px;
+}
+
+
+/* =========================================================
+   CONTACT US
+   ========================================================= */
+
+.all-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.contact-us-text {
+    margin-bottom: 4px;
+
+    color: var(--cream);
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.call-us,
+.mail-us,
+.locate-us {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--cream);
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    font-size: 12px;
+}
+
+.call-us i,
+.mail-us i,
+.locate-us i {
+    width: 15px;
+
+    color: var(--light-gold);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER LAST / COPYRIGHT
+   ========================================================= */
+
+.footer-last {
+    position: relative;
+
+    width: calc(100% - 30px);
+
+    min-height: 55px;
+
+    margin: 0 auto;
+
+    padding: 5px 30px 15px;
+
+    display: flex;
+    align-items: center;
+
+    background: var(--gold);
+
+    border-radius: 50px 50px 0 0;
+
+    overflow: hidden;
+}
+
+.last {
+    position: relative;
+    z-index: 2;
+
+    color: var(--burgundy);
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    font-size: 14px;
+}
+
+.last i {
+    margin-right: 4px;
+
+    color: var(--burgundy);
+}
+
+
+/* =========================================================
+   FOOTER PATTERN
+   ========================================================= */
+
+.footer-last::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 220px;
+    height: 100%;
+
+    background-image:
+        url("Images/footer-pattern.svg");
+
+    background-size: 22px;
+    background-repeat: repeat;
+
+    opacity: 0.4;
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent,
+            black
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent,
+            black
+        );
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVE
+   1024px and below
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* Navigation */
+    .nav-links {
+        gap: 30px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    /* Hero */
+    .span-text {
+        padding-left: 4rem;
+    }
+
+    .first,
+    .second {
+        font-size: 58px;
+    }
+
+    /* Feature bar */
+    .hero-main {
+        width: 92%;
+
+        padding: 15px 35px;
+
+        gap: 20px;
+    }
+
+    .landmark-text strong,
+    .trees-text strong,
+    .hotel-text strong,
+    .room-service-text strong {
+        font-size: 14px;
+    }
+
+    .landmark-text span,
+    .trees-text span,
+    .hotel-text span,
+    .room-service-text span {
+        font-size: 11px;
+    }
+
+    /* Sections */
+    .top-attractions,
+    .hotel-attractions,
+    .Resturant-attractions {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    /* Footer */
+    .footer-main {
+        width: calc(100% - 80px);
+
+        margin-left: 40px;
+        margin-right: 40px;
+
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .footer-middle {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE / SMALL TABLET
+   768px and below
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    .hero .nav {
+        min-height: auto;
+
+        padding: 10px 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    .hero .nav .logo {
+        margin-right: auto;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        flex-basis: 100%;
+
+        gap: 25px;
+
+        padding: 5px 0;
+
+        overflow-x: auto;
+
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+
+        white-space: nowrap;
+    }
+
+    .btn {
+        margin-left: auto;
+    }
+
+    .btn .btn-links {
+        gap: 8px;
+    }
+
+    .register-btn,
+    .login-btn {
+        padding: 7px 12px;
+
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       HERO HEADER
+       ===================================================== */
+
+    .hero-header {
+        height: 360px;
+
+        background-position: center;
+    }
+
+    .header-content {
+        padding: 0;
+    }
+
+    .span-text {
+        padding-top: 5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        max-width: 100%;
+    }
+
+    .first,
+    .second {
+        font-size: clamp(42px, 9vw, 55px);
+    }
+
+    .third {
+        max-width: 450px;
+
+        margin-top: 15px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       FEATURE BAR
+       ===================================================== */
+
+    .hero-main {
+        width: calc(100% - 30px);
+
+        margin-top: -25px;
+
+        padding: 20px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+
+        border-radius: 18px;
+    }
+
+    .landmark,
+    .trees,
+    .hotel,
+    .room-service {
+        align-items: flex-start;
+    }
+
+
+    /* =====================================================
+       SECTION PADDING
+       ===================================================== */
+
+    .top-attractions,
+    .hotel-attractions,
+    .Resturant-attractions {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .top-attractions {
+        padding-top: 50px;
+    }
+
+    .attractions-header h2,
+    .hotel-attractions-header h2,
+    .Resturant-attractions-header h2 {
+        font-size: 23px;
+    }
+
+
+    /* =====================================================
+       CARD GRIDS
+       ===================================================== */
+
+    .attractions-container,
+    .hotel-attractions-container,
+    .Resturant-attractions-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .footer-main {
+        width: calc(100% - 40px);
+
+        margin: 35px 20px 0;
+
+        padding: 20px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .mail-text {
+        font-size: 21px;
+    }
+
+    .mail-text span {
+        font-size: 12px;
+    }
+
+    .footer-middle {
+        padding: 35px 20px 50px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 40px;
+    }
+
+    .all-contact {
+        grid-column: 1 / -1;
+    }
+
+    .footer-last {
+        width: calc(100% - 20px);
+
+        min-height: 50px;
+
+        justify-content: center;
+
+        padding: 10px 20px;
+    }
+
+    .last {
+        font-size: 11px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   MOBILE PHONES
+   480px and below
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    .hero .nav {
+        padding: 8px 12px;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 18px;
+
+        justify-content: flex-start;
+
+        padding-bottom: 7px;
+
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .register-btn,
+    .login-btn {
+        padding: 6px 10px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero-header {
+        height: 320px;
+
+        background-position: 60% center;
+    }
+
+    .hero-header::after {
+        height: 60px;
+    }
+
+    .span-text {
+        padding-top: 4.5rem;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .first,
+    .second {
+        font-size: clamp(36px, 11vw, 48px);
+    }
+
+    .third {
+        max-width: 350px;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       FEATURE BAR
+       ===================================================== */
+
+    .hero-main {
+        width: calc(100% - 20px);
+
+        padding: 18px 15px;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        border-radius: 15px;
+    }
+
+    .landmark,
+    .trees,
+    .hotel,
+    .room-service {
+        width: 100%;
+    }
+
+    .landmark-image,
+    .trees-image,
+    .hotel-image,
+    .room-service-image {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
+
+    .top-attractions,
+    .hotel-attractions,
+    .Resturant-attractions {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .top-attractions {
+        padding-top: 40px;
+    }
+
+    .attractions-header,
+    .hotel-attractions-header,
+    .Resturant-attractions-header {
+        margin-bottom: 15px;
+    }
+
+    .attractions-header h2,
+    .hotel-attractions-header h2,
+    .Resturant-attractions-header h2 {
+        font-size: 21px;
+    }
+
+
+    /* =====================================================
+       ONE-COLUMN CARDS
+       ===================================================== */
+
+    .attractions-container,
+    .hotel-attractions-container,
+    .Resturant-attractions-container {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .attraction-card > img,
+    .hotel-attraction-card > img,
+    .Resturant-attraction-card > img {
+        height: 200px;
+    }
+
+    .attraction-content,
+    .hotel-attraction-content,
+    .Resturant-attraction-content {
+        padding: 18px 14px 14px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .footer-main {
+        width: calc(100% - 24px);
+
+        margin: 30px 12px 0;
+
+        padding: 18px;
+
+        border-radius: 15px;
+    }
+
+    .mail-text {
+        font-size: 19px;
+    }
+
+    .footer-btn {
+        width: 100%;
+    }
+
+    .footer-btn .Register {
+        width: 100%;
+    }
+
+    .footer-middle {
+        display: flex;
+        flex-direction: column;
+
+        padding: 35px 25px 45px;
+
+        gap: 30px;
+    }
+
+    .footer-middle .nav,
+    .quick-links,
+    .all-contact {
+        width: 100%;
+    }
+
+    .footer-last {
+        border-radius: 30px 30px 0 0;
+    }
+
+    .last {
+        font-size: 10px;
+    }
+
+    .footer-last::after {
+        width: 120px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   360px and below
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .hero .nav {
+        gap: 8px;
+    }
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 21px;
+    }
+
+    .register-btn,
+    .login-btn {
+        padding: 5px 8px;
+
+        font-size: 9px;
+    }
+
+    .first,
+    .second {
+        font-size: 34px;
+    }
+
+    .third {
+        font-size: 11px;
+    }
+
+    .hero-main {
+        padding: 15px 12px;
+    }
+
+    .mail-text {
+        font-size: 17px;
+    }
+
+    .mail-text span {
+        font-size: 11px;
+    }
+}

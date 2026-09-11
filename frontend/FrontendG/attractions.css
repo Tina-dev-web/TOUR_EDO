@@ -1,0 +1,1334 @@
+/* =========================================================
+   TOUREDO - CSS
+   Current HTML Structure:
+   NAV
+   MAIN
+   FOOTER
+   ========================================================= */
+
+
+/* =========================================================
+   1. COLOR VARIABLES
+   ========================================================= */
+
+:root {
+    --burgundy: #5C1A1B;
+    --gold: #D4AF37;
+    --light-gold: #F5D76E;
+    --cream: #F5F0E8;
+    --white: #ffffff;
+    --text-dark: #222222;
+    --text-gray: #666666;
+
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+    --radius: 14px;
+}
+
+
+/* =========================================================
+   2. GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+
+    background-color: var(--cream);
+
+    color: var(--black);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================================================
+   3. NAVIGATION
+   ========================================================= */
+
+.nav {
+    width: 100%;
+    min-height: 66px;
+
+    background-color: var(--burgundy);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 20px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   4. LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 2px;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+}
+
+.logo-text,
+.logo-text2 {
+    font-family: "Times New Roman", Georgia, serif;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    line-height: 1;
+}
+
+.logo-text {
+    color: var(--white);
+}
+
+.logo-text2 {
+    color: var(--light-gold);
+}
+
+
+/* =========================================================
+   5. NAVIGATION LINKS
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+}
+
+.nav-links a {
+    color: var(--light-gold);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+
+/* =========================================================
+   6. REGISTER / LOGIN BUTTONS
+   ========================================================= */
+
+.btn {
+    display: flex;
+    align-items: center;
+}
+
+.btn-links {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.register-btn,
+.login-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 75px;
+
+    padding: 8px 16px;
+
+    background-color: var(--light-gold);
+
+    color: var(--burgundy);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.register-btn:hover,
+.login-btn:hover {
+    background-color: var(--gold);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   7. MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+
+    background-color: var(--cream);
+}
+
+
+/* =========================================================
+   8. PARK & MUSEUM
+   ========================================================= */
+
+.top-attractions {
+    width: 100%;
+
+    background-color: var(--cream);
+
+    padding: 60px 70px 30px;
+}
+
+.attractions-header {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.attractions-header h2 {
+    color: var(--burgundy);
+
+    font-family: "Times New Roman", Georgia, serif;
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/* Cards container */
+
+.attractions-container {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* Attraction card */
+
+.attraction-card {
+    width: 100%;
+
+    background-color: var(--white);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.attraction-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+/* Attraction image */
+
+.attraction-card > img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+}
+
+
+/* Attraction content */
+
+.attraction-content {
+    padding: 20px 14px 15px;
+}
+
+.attraction-content h3 {
+    color: var(--burgundy);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.attraction-content p {
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+
+/* Location */
+
+.attraction-location {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--burgundy);
+
+    font-size: 11px;
+}
+
+.attraction-location i {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   9. HOTEL SECTION
+   ========================================================= */
+
+.hotel-attractions {
+    width: 100%;
+
+    background-color: var(--burgundy);
+
+    margin-top: 15px;
+
+    padding: 35px 70px;
+}
+
+.hotel-attractions-header {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.hotel-attractions-header h2 {
+    color: var(--light-gold);
+
+    font-family: "Times New Roman", Georgia, serif;
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/* Hotel container */
+
+.hotel-attractions-container {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* Hotel card */
+
+.hotel-attraction-card {
+    width: 100%;
+
+    background-color: var(--white);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hotel-attraction-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+
+/* Hotel image */
+
+.hotel-attraction-card > img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+}
+
+
+/* Hotel content */
+
+.hotel-attraction-content {
+    padding: 20px 14px 15px;
+}
+
+.hotel-attraction-content h3 {
+    color: var(--burgundy);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.hotel-attraction-content p {
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+}
+
+
+/* Hotel stars */
+
+.hotel-stars {
+    color: var(--gold);
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Hotel location */
+
+.hotel-attraction-location {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--burgundy);
+
+    font-size: 11px;
+}
+
+.hotel-attraction-location i {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   10. RESTAURANT SECTION
+   ========================================================= */
+
+.Resturant-attractions {
+    width: 100%;
+
+    background-color: var(--cream);
+
+    margin-top: 15px;
+
+    padding: 35px 70px;
+}
+
+.Resturant-attractions-header {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.Resturant-attractions-header h2 {
+    color: var(--burgundy);
+
+    font-family: "Times New Roman", Georgia, serif;
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/* Restaurant container */
+
+.Resturant-attractions-container {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* Restaurant card */
+
+.Resturant-attraction-card {
+    width: 100%;
+
+    background-color: var(--white);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.Resturant-attraction-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+/* Restaurant image */
+
+.Resturant-attraction-card > img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+}
+
+
+/* Restaurant content */
+
+.Resturant-attraction-content {
+    padding: 20px 14px 15px;
+}
+
+.Resturant-attraction-content h3 {
+    color: var(--burgundy);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.Resturant-attraction-content p {
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+
+/* Restaurant location */
+
+.Resturant-attraction-location {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--burgundy);
+
+    font-size: 11px;
+}
+
+.Resturant-attraction-location i {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+.site-footer {
+    width: 100%;
+
+    background-color: var(--burgundy);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   12. FOOTER MAIN / CTA
+   ========================================================= */
+
+.footer-main {
+    width: calc(100% - 140px);
+
+    min-height: 95px;
+
+    margin: 50px 70px 40px;
+
+    padding: 15px 70px;
+
+    background-color: var(--light-gold);
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Footer CTA text */
+
+.mail-text {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--burgundy);
+
+    font-family: "Times New Roman", Georgia, serif;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.mail-text span {
+    margin-top: 5px;
+
+    color: var(--black);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+/* Footer register */
+
+.footer-btn .Register {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 25px;
+
+    background-color: var(--burgundy);
+
+    color: var(--light-gold);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.footer-btn .Register:hover {
+    background-color: var(--gold);
+
+    color: var(--burgundy);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   13. FOOTER MIDDLE
+   ========================================================= */
+
+.footer-middle {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr 1.2fr;
+
+    gap: 60px;
+
+    padding: 20px 70px 70px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   14. FOOTER BRAND
+   ========================================================= */
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.logo3 {
+    display: flex;
+    align-items: center;
+}
+
+.logo3 .logo img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Follow us */
+
+.contact-on {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    color: var(--cream);
+
+    font-size: 13px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.social-links a {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--light-gold);
+
+    color: var(--burgundy);
+
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--gold);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   15. QUICK LINKS
+   ========================================================= */
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.quick-links-text {
+    color: var(--light-gold);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.quick-links2 {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.quick-links2 a {
+    color: var(--cream);
+
+    font-size: 12px;
+
+    transition: 0.3s ease;
+}
+
+.quick-links2 a:hover {
+    color: var(--light-gold);
+
+    padding-left: 5px;
+}
+
+
+/* =========================================================
+   16. CONTACT
+   ========================================================= */
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.contact-us-text {
+    color: var(--light-gold);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-bottom: 2px;
+}
+
+.call-us,
+.mail-us,
+.locate-us {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--cream);
+
+    font-size: 12px;
+}
+
+.call-us i,
+.mail-us i,
+.locate-us i {
+    width: 18px;
+
+    color: var(--light-gold);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   17. COPYRIGHT
+   ========================================================= */
+
+.footer-last {
+    width: calc(100% - 30px);
+
+    min-height: 55px;
+
+    margin: 0 15px;
+
+    background-color: var(--gold);
+
+    border-radius: 15px 15px 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+.last {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--burgundy);
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   18. FOOTER PATTERN
+   ========================================================= */
+
+.site-footer::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 150px;
+
+    background-image: url("Images/footer-pattern.svg");
+
+    background-repeat: repeat-x;
+
+    background-position: bottom;
+
+    background-size: auto 150px;
+
+    opacity: 0.12;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   19. TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .nav {
+        padding: 8px 25px;
+    }
+
+    .nav-links {
+        gap: 35px;
+    }
+
+    .top-attractions,
+    .hotel-attractions,
+    .Resturant-attractions {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .attractions-container,
+    .hotel-attractions-container,
+    .Resturant-attractions-container {
+        gap: 14px;
+    }
+
+    .footer-main {
+        width: calc(100% - 80px);
+
+        margin-left: 40px;
+        margin-right: 40px;
+
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .footer-middle {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        gap: 35px;
+    }
+}
+
+
+/* =========================================================
+   20. TABLETS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* NAVIGATION */
+
+    .nav {
+        min-height: auto;
+
+        flex-wrap: wrap;
+
+        row-gap: 10px;
+
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 26px;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 35px;
+
+        padding: 5px 0;
+    }
+
+    .btn-links {
+        gap: 8px;
+    }
+
+    .register-btn,
+    .login-btn {
+        padding: 7px 13px;
+    }
+
+
+    /* PARKS / MUSEUMS */
+
+    .top-attractions,
+    .hotel-attractions,
+    .Resturant-attractions {
+        padding: 45px 25px 25px;
+    }
+
+    .attractions-header h2,
+    .hotel-attractions-header h2,
+    .Resturant-attractions-header h2 {
+        font-size: 28px;
+    }
+
+    .attractions-container,
+    .hotel-attractions-container,
+    .Resturant-attractions-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+
+    /* FOOTER CTA */
+
+    .footer-main {
+        width: calc(100% - 50px);
+
+        margin: 40px 25px 35px;
+
+        padding: 20px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .mail-text {
+        font-size: 22px;
+    }
+
+    .mail-text span {
+        font-size: 13px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-middle {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        padding: 20px 25px 50px;
+
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   21. ANDROID / MOBILE PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* NAVIGATION */
+
+    .nav {
+        padding: 8px 14px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 23px;
+    }
+
+    .btn-links {
+        gap: 5px;
+    }
+
+    .register-btn,
+    .login-btn {
+        min-width: auto;
+
+        padding: 6px 10px;
+
+        font-size: 11px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        gap: 28px;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        padding: 7px 5px;
+
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    /* SECTIONS */
+
+    .top-attractions,
+    .hotel-attractions,
+    .Resturant-attractions {
+        padding: 35px 15px 20px;
+    }
+
+    .attractions-header,
+    .hotel-attractions-header,
+    .Resturant-attractions-header {
+        margin-bottom: 20px;
+    }
+
+    .attractions-header h2,
+    .hotel-attractions-header h2,
+    .Resturant-attractions-header h2 {
+        font-size: 25px;
+    }
+
+
+    /* ONE CARD PER ROW */
+
+    .attractions-container,
+    .hotel-attractions-container,
+    .Resturant-attractions-container {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    /* CARD IMAGES */
+
+    .attraction-card > img,
+    .hotel-attraction-card > img,
+    .Resturant-attraction-card > img {
+        height: 210px;
+    }
+
+
+    /* FOOTER CTA */
+
+    .footer-main {
+        width: calc(100% - 30px);
+
+        margin: 30px 15px;
+
+        padding: 20px;
+
+        border-radius: 10px;
+    }
+
+    .mail-text {
+        font-size: 20px;
+    }
+
+    .mail-text span {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+    .footer-btn .Register {
+        padding: 9px 20px;
+
+        font-size: 12px;
+    }
+
+
+    /* FOOTER COLUMNS */
+
+    .footer-middle {
+        grid-template-columns: 1fr;
+
+        padding: 15px 20px 40px;
+
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .quick-links,
+    .all-contact {
+        width: 100%;
+    }
+
+
+    /* COPYRIGHT */
+
+    .footer-last {
+        width: calc(100% - 20px);
+
+        margin: 0 10px;
+
+        min-height: 50px;
+    }
+
+    .last {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   22. VERY SMALL ANDROID PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .nav {
+        padding: 7px 10px;
+    }
+
+    .logo img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 20px;
+    }
+
+    .register-btn,
+    .login-btn {
+        padding: 5px 8px;
+
+        font-size: 10px;
+    }
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .attractions-header h2,
+    .hotel-attractions-header h2,
+    .Resturant-attractions-header h2 {
+        font-size: 22px;
+    }
+
+    .attraction-card > img,
+    .hotel-attraction-card > img,
+    .Resturant-attraction-card > img {
+        height: 180px;
+    }
+
+    .mail-text {
+        font-size: 18px;
+    }
+
+    .mail-text span {
+        font-size: 11px;
+    }
+}
