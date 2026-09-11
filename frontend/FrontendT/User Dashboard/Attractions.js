@@ -2,14 +2,9 @@
 // MOBILE SIDEBAR
 // ===============================
 
-<<<<<<< Updated upstream
-  menuBtn.addEventListener('click', () => 
-  sidebar.classList.add('show-sidebar'));
-=======
 const sidebar = document.getElementById('sidebar');
 const menuBtn = document.getElementById('menubtn');
 const closeBtn = document.getElementById('closebtn');
->>>>>>> Stashed changes
 
 menuBtn.addEventListener('click', () => {
   sidebar.classList.add('active');

@@ -1,4 +1,6 @@
 const API_BASE_URL = "https://tour-edo-backend.onrender.com/api";
+//const API_BASE_URL = "http://localhost:5000/api";
+
 
 function getToken() {
   return localStorage.getItem("token");
@@ -47,9 +49,6 @@ async function apiRequest(endpoint, options = {}) {
 }
 
 
-// ===============================
-// LOGIN PROTECTION
-// ===============================
 
 function requireLogin(loginPath = "../Login.html") {
   const token = getToken();
@@ -62,10 +61,6 @@ function requireLogin(loginPath = "../Login.html") {
   return true;
 }
 
-
-// ===============================
-// ADMIN PROTECTION
-// ===============================
 
 async function requireAdmin(loginPath = "../Login.html") {
 

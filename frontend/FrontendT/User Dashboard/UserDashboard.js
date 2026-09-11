@@ -1,14 +1,3 @@
-<<<<<<< Updated upstream
-document.addEventListener("DOMContentLoaded", () => {
-
- 
-  const sideMenu = document.querySelector("#sidebar");
-
- 
-  const menuBtn = document.querySelector(".top-bar button");
-
-  const closeBtn = document.querySelector(".close");
-=======
 const sidebar = document.getElementById("sidebar");
 const menuBtn = document.getElementById("menubtn");
 const closeBtn = document.getElementById("closebtn");
@@ -31,60 +20,19 @@ const elements = {
   updatesList: document.getElementById("updatesList"),
   destinationsList: document.getElementById("destinationsList"),
 };
->>>>>>> Stashed changes
 
 const circleCircumference = 2 * Math.PI * 36;
 
-<<<<<<< Updated upstream
- 
-  console.log("Sidebar:", sideMenu);
-  console.log("Menu button:", menuBtn);
-  console.log("Close button:", closeBtn);
-=======
 function bindSidebar() {
   menuBtn?.addEventListener("click", () => {
     sidebar?.classList.add("show");
   });
->>>>>>> Stashed changes
 
   closeBtn?.addEventListener("click", () => {
     sidebar?.classList.remove("show");
   });
 }
 
-<<<<<<< Updated upstream
-  if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
-      sideMenu.classList.add("active");
-    });
-  }
-
-
-  
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      sideMenu.classList.remove("active");
-    });
-  }
-
-  document.addEventListener("click", (event) => {
-
-    const isClickInsideSidebar = sideMenu.contains(event.target);
-
-    const isClickOnMenuBtn = menuBtn && menuBtn.contains(event.target);
-
-    if (
-      !isClickInsideSidebar &&
-      !isClickOnMenuBtn &&
-      sideMenu.classList.contains("active")
-    ) {
-      sideMenu.classList.remove("active");
-    }
-
-  });
-
-});
-=======
 function bindLogout() {
   logoutLink?.addEventListener("click", (event) => {
     event.preventDefault();
@@ -554,4 +502,3 @@ async function initializeDashboard() {
 }
 
 document.addEventListener("DOMContentLoaded", initializeDashboard);
->>>>>>> Stashed changes
