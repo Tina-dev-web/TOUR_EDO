@@ -169,7 +169,7 @@ try {
 
 
   window.location.href =
-    "../../Login.html";
+    "../Login.html";
 
 
 } catch (error) {

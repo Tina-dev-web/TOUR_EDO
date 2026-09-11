@@ -144,7 +144,7 @@ closeBtn.addEventListener("click", () => {
   sideMenu.style.display = "none";
 });
 
-document.querySelector('a[href="/Login.html"]')?.addEventListener("click", () => {
+document.querySelector('a[href="../Login.html"]')?.addEventListener("click", () => {
   localStorage.removeItem("token");
   localStorage.removeItem("user");
 });

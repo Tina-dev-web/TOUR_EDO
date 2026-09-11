@@ -14,7 +14,7 @@ closeBtn.addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-  if (!requireLogin("../../Login.html")) {
+  if (!requireLogin("../Login.html")) {
     return;
   }
 

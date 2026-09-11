@@ -2,14 +2,9 @@
 // MOBILE SIDEBAR
 // ===============================
 
-<<<<<<< Updated upstream
-  menuBtn.addEventListener('click', () => 
-  sidebar.classList.add('show-sidebar'));
-=======
 const sidebar = document.getElementById('sidebar');
 const menuBtn = document.getElementById('menubtn');
 const closeBtn = document.getElementById('closebtn');
->>>>>>> Stashed changes
 
 menuBtn.addEventListener('click', () => {
   sidebar.classList.add('active');
@@ -149,7 +144,7 @@ function exploreAttraction(id) {
   localStorage.setItem("selectedAttractionId", id);
 
   // Change this filename when your attraction details page is ready.
-  window.location.href = `AttractionDetails.html?id=${id}`;
+  window.location.href = `../../FrontendG/attraction.html?id=${id}`;
 }
 
 
