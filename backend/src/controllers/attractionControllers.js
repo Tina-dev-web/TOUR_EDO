@@ -207,12 +207,11 @@ const getAttractionById = async (req, res) => {
 
 const deleteAttraction = async (req, res) => {
   try {
-    const { id } = req.params;
-
-    const attraction = await Attraction.findById(id);
+    const attraction = await Attraction.findById(req.params.id);
 
     if (!attraction) {
       return res.status(404).json({
+        success: false,
         message: "Attraction not found",
       });
     }
@@ -221,21 +220,29 @@ const deleteAttraction = async (req, res) => {
     if (attraction.images && attraction.images.length > 0) {
       for (const image of attraction.images) {
         if (image.publicId) {
-          await cloudinary.uploader.destroy(image.publicId);
+          try {
+            await cloudinary.uploader.destroy(image.publicId);
+          } catch (cloudinaryError) {
+            console.error(
+              "Cloudinary image deletion failed:",
+              cloudinaryError
+            );
+          }
         }
       }
     }
 
-  
-    await Attraction.findByIdAndDelete(id);
+    await Attraction.findByIdAndDelete(req.params.id);
 
-    res.status(200).json({
+    return res.status(200).json({
+      success: true,
       message: "Attraction deleted successfully",
     });
   } catch (error) {
     console.error("Delete attraction error:", error);
 
-    res.status(500).json({
+    return res.status(500).json({
+      success: false,
       message: "Server error",
     });
   }
