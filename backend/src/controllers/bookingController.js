@@ -79,6 +79,28 @@ const getMyBookings = async (req, res) => {
   }
 };
 
+// GET ALL BOOKINGS - ADMIN
+
+const getAllBookingsForAdmin = async (req, res) => {
+  try {
+    const bookings = await Booking.find()
+      .populate("user", "name email")
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({
+      success: true,
+      count: bookings.length,
+      bookings,
+    });
+  } catch (error) {
+    console.error("Get all bookings error:", error);
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
 //get single booking by id
 
 const getBookingById = async (req, res) => {
@@ -208,6 +230,7 @@ const deleteBooking = async (req, res) => {
 module.exports = {
   createBooking,
   getMyBookings,
+  getAllBookingsForAdmin,
   getBookingById,
   updateBooking,
   deleteBooking,

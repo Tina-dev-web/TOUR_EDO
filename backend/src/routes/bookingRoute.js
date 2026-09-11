@@ -3,12 +3,14 @@ const express = require("express");
 const {
   createBooking,
   getMyBookings,
+  getAllBookingsForAdmin,
   getBookingById,
   updateBooking,
   deleteBooking,
 } = require("../controllers/bookingController");
 
 const protectedAuth = require("../middleware/authMiddleware");
+const adminMiddleware = require("../middleware/adminMiddleware");
 
 const router = express.Router();
 
@@ -21,6 +23,14 @@ router.post("/", protectedAuth, createBooking);
 // GET LOGGED-IN USER'S BOOKINGS
 
 router.get("/my-bookings", protectedAuth, getMyBookings);
+
+// GET ALL BOOKINGS - ADMIN ONLY
+router.get(
+  "/admin/all",
+  protectedAuth,
+  adminMiddleware,
+  getAllBookingsForAdmin
+);
 
 
 // GET SINGLE BOOKING
