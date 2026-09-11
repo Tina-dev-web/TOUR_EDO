@@ -1,0 +1,1769 @@
+/* =========================================================
+   TOUREDO - GLOBAL CSS
+   ========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+    --edo-maroon: #5C1A1B;
+    --edo-gold: #D4AF37;
+    --edo-light-gold: #F5D76E;
+    --edo-cream: #F5F0E8;
+    --white: #ffffff;
+    --dark: #222222;
+    --gray: #555555;
+
+    --max-width: 1250px;
+}
+
+
+/* =========================================================
+   2. GLOBAL RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--edo-cream);
+    color: var(--dark);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   3. HEADER / NAVIGATION
+   ========================================================= */
+
+.site-header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Main navigation */
+
+.nav {
+    width: 100%;
+    min-height: 70px;
+
+    background-color: var(--edo-maroon);
+
+    display: grid;
+
+    /*
+       Three balanced areas:
+       Logo | Navigation | Buttons
+    */
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    padding: 8px 5%;
+
+    gap: 30px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   4. LOGO
+   ========================================================= */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    color: var(--white);
+
+    white-space: nowrap;
+}
+
+
+.nav > .logo {
+    justify-self: start;
+}
+
+
+.logo img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+}
+
+
+.logo-text {
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    color: var(--white);
+
+    margin-left: 3px;
+}
+
+
+.logo-text2 {
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    color: var(--edo-light-gold);
+}
+
+
+/* =========================================================
+   5. NAVIGATION LINKS
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(25px, 4vw, 65px);
+
+    white-space: nowrap;
+}
+
+
+.nav-links a {
+    position: relative;
+
+    color: var(--edo-light-gold);
+
+    font-family: Poppins, Tahoma, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* Hover */
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+
+/* Active navigation link */
+
+.nav-links a.active {
+    color: var(--white);
+}
+
+
+/* Gold underline */
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background-color: var(--edo-light-gold);
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   6. LOGIN / REGISTER BUTTONS
+   ========================================================= */
+
+.btn {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.btn-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+
+.register-btn,
+.login-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+
+    padding: 9px 17px;
+
+    border-radius: 25px;
+
+    font-family: Poppins, Tahoma, sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* Register */
+
+.register-btn {
+    background-color: var(--edo-light-gold);
+
+    color: var(--edo-maroon);
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Login */
+
+.login-btn {
+    background-color: transparent;
+
+    color: var(--edo-light-gold);
+
+    border: 1px solid var(--edo-light-gold);
+}
+
+
+/* Button hover */
+
+.register-btn:hover,
+.login-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+.register-btn:hover {
+    background-color: var(--edo-gold);
+}
+
+
+.login-btn:hover {
+    background-color: var(--edo-light-gold);
+
+    color: var(--edo-maroon);
+}
+
+
+/* =========================================================
+   7. ABOUT HERO
+   ========================================================= */
+
+.about-hero {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 480px;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(245, 240, 232, 0.97),
+            rgba(245, 240, 232, 0.78),
+            rgba(245, 240, 232, 0.20)
+        ),
+        url("images/TourEdo landingpage_8.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.about-hero-overlay {
+    width: 100%;
+}
+
+
+.about-hero-content {
+    width: min(90%, var(--max-width));
+
+    margin: auto;
+
+    padding: 80px 30px;
+}
+
+
+.about-small-title,
+.section-label {
+    display: block;
+
+    color: var(--edo-gold);
+
+    font-family: Poppins, Tahoma, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+.about-hero h1 {
+    max-width: 650px;
+
+    color: var(--edo-maroon);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+
+.about-hero h1 span {
+    display: block;
+
+    color: var(--edo-gold);
+}
+
+
+.about-hero p {
+    max-width: 560px;
+
+    color: #444;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 28px;
+}
+
+
+/* Explore button */
+
+.about-explore-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: var(--edo-maroon);
+
+    color: var(--edo-light-gold);
+
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.about-explore-btn:hover {
+    background-color: var(--edo-gold);
+
+    color: var(--edo-maroon);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   8. EDO INTRODUCTION
+   ========================================================= */
+
+.edo-introduction {
+    width: 100%;
+
+    padding: 80px 5%;
+
+    background-color: var(--edo-cream);
+}
+
+
+.edo-introduction-container {
+    width: min(100%, var(--max-width));
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* Image */
+
+.edo-introduction-image {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(92, 26, 27, 0.15);
+}
+
+
+.edo-introduction-image img {
+    width: 100%;
+
+    height: 400px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+.edo-introduction-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* Text */
+
+.edo-introduction-content h2 {
+    color: var(--edo-maroon);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+
+.edo-introduction-content h2 span {
+    color: var(--edo-gold);
+}
+
+
+.edo-introduction-content p {
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   9. SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    width: min(100%, 750px);
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    color: var(--edo-maroon);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(30px, 4vw, 43px);
+
+    line-height: 1.2;
+
+    margin-bottom: 12px;
+}
+
+
+.section-heading p {
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   10. EDO HISTORY
+   ========================================================= */
+
+.edo-history {
+    width: 100%;
+
+    padding: 80px 5%;
+
+    background-color: #ffffff;
+}
+
+
+.history-container {
+    width: min(100%, var(--max-width));
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.history-card {
+    background-color: var(--edo-cream);
+
+    border-radius: 16px;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    border-bottom: 3px solid transparent;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.history-card:hover {
+    transform: translateY(-7px);
+
+    border-bottom-color: var(--edo-gold);
+
+    box-shadow:
+        0 10px 25px rgba(92, 26, 27, 0.12);
+}
+
+
+.history-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background-color: var(--edo-maroon);
+
+    color: var(--edo-light-gold);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+.history-card h3 {
+    color: var(--edo-maroon);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+
+    margin-bottom: 12px;
+}
+
+
+.history-card p {
+    color: #555;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   11. ABOUT TOUREDO
+   ========================================================= */
+
+.about-touredo {
+    width: 100%;
+
+    padding: 90px 5%;
+
+    background-color: var(--edo-maroon);
+}
+
+
+.about-touredo-container {
+    width: min(100%, var(--max-width));
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* Text */
+
+.about-touredo-content .section-label {
+    color: var(--edo-light-gold);
+}
+
+
+.about-touredo-content h2 {
+    color: var(--white);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+
+.about-touredo-content h2 span {
+    color: var(--edo-light-gold);
+}
+
+
+.about-touredo-content p {
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+/* Discover button */
+
+.discover-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 12px;
+
+    padding: 12px 20px;
+
+    border-radius: 25px;
+
+    background-color: var(--edo-light-gold);
+
+    color: var(--edo-maroon);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.discover-btn:hover {
+    background-color: var(--edo-gold);
+
+    transform: translateY(-2px);
+}
+
+
+/* Image */
+
+.about-touredo-image {
+    position: relative;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+.about-touredo-image img {
+    width: 100%;
+
+    height: 420px;
+
+    object-fit: cover;
+}
+
+
+/* Image badge */
+
+.image-badge {
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background-color: rgba(92, 26, 27, 0.94);
+
+    color: var(--white);
+
+    padding: 12px 17px;
+
+    border-radius: 12px;
+}
+
+
+.image-badge i {
+    color: var(--edo-light-gold);
+
+    font-size: 20px;
+}
+
+
+.image-badge strong {
+    display: block;
+
+    color: var(--edo-light-gold);
+
+    font-size: 14px;
+}
+
+
+.image-badge span {
+    display: block;
+
+    color: var(--white);
+
+    font-size: 11px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   12. WHY TOUREDO
+   ========================================================= */
+
+.why-touredo {
+    width: 100%;
+
+    padding: 80px 5%;
+
+    background-color: var(--edo-cream);
+}
+
+
+.why-container {
+    width: min(100%, var(--max-width));
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.why-card {
+    background-color: #ffffff;
+
+    padding: 30px 22px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 15px rgba(92, 26, 27, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.why-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 25px rgba(92, 26, 27, 0.13);
+}
+
+
+.why-card > i {
+    color: var(--edo-gold);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+
+.why-card h3 {
+    color: var(--edo-maroon);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.why-card p {
+    color: #555;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    background-color: var(--edo-maroon);
+
+    color: var(--white);
+
+    padding-top: 1px;
+}
+
+
+/* =========================================================
+   14. FOOTER MAIN / REGISTRATION
+   ========================================================= */
+
+.footer {
+    width: 100%;
+}
+
+
+.footer-main {
+    width: min(90%, 1100px);
+
+    margin: 50px auto 0;
+
+    padding: 22px 45px;
+
+    background-color: var(--edo-gold);
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.mail-text {
+    color: var(--edo-maroon);
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+.mail-text span {
+    display: block;
+
+    color: #222;
+
+    font-family: Poppins, Tahoma, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    margin-top: 7px;
+}
+
+
+.footer-btn .Register {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--edo-light-gold);
+
+    color: var(--edo-maroon);
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.footer-btn .Register:hover {
+    background-color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   15. FOOTER MIDDLE
+   ========================================================= */
+
+.footer-middle {
+    width: min(90%, var(--max-width));
+
+    margin: 0 auto;
+
+    padding: 80px 0 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1.3fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+/* Footer logo */
+
+.logo3 {
+    margin-bottom: 15px;
+}
+
+
+.footer-middle .logo img {
+    width: 42px;
+    height: 42px;
+}
+
+
+.footer-middle .logo-text,
+.footer-middle .logo-text2 {
+    font-size: 25px;
+}
+
+
+.contact-on > span {
+    display: block;
+
+    color: var(--edo-cream);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+
+/* Social links */
+
+.social-links {
+    display: flex;
+
+    gap: 12px;
+}
+
+
+.social-links a {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: rgba(245, 215, 110, 0.15);
+
+    color: var(--edo-light-gold);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.social-links a:hover {
+    background-color: var(--edo-light-gold);
+
+    color: var(--edo-maroon);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   16. FOOTER QUICK LINKS
+   ========================================================= */
+
+.quick-links-text,
+.contact-us-text {
+    color: var(--edo-light-gold);
+
+    font-family: Poppins, Tahoma, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.quick-links2 {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.quick-links2 a {
+    color: var(--edo-cream);
+
+    font-size: 12px;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+
+.quick-links2 a:hover {
+    color: var(--edo-light-gold);
+
+    padding-left: 5px;
+}
+
+
+/* =========================================================
+   17. CONTACT
+   ========================================================= */
+
+.contact-us {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.call-us,
+.mail-us,
+.locate-us {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--edo-cream);
+
+    font-size: 12px;
+}
+
+
+.call-us i,
+.mail-us i,
+.locate-us i {
+    width: 20px;
+
+    color: var(--edo-light-gold);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   18. FOOTER LAST
+   ========================================================= */
+
+.footer-last {
+    width: calc(100% - 30px);
+
+    margin: 0 auto;
+
+    min-height: 55px;
+
+    background-color: var(--edo-gold);
+
+    border-top-left-radius: 45px;
+
+    border-top-right-radius: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.footer-last::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 40%;
+
+    background-image:
+        url("Images/footer-pattern.svg");
+
+    background-repeat: repeat;
+
+    background-size: 22px 22px;
+
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
+
+.last {
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--edo-maroon);
+
+    font-family: Poppins, Tahoma, sans-serif;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+.last i {
+    color: var(--edo-maroon);
+
+    margin-right: 4px;
+}
+
+
+/* =========================================================
+   19. TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    /* Navigation */
+
+    .nav {
+        grid-template-columns: auto 1fr auto;
+
+        padding: 8px 25px;
+
+        gap: 20px;
+    }
+
+
+    .nav-links {
+        gap: 25px;
+    }
+
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 25px;
+    }
+
+
+    /* History */
+
+    .history-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* Why TourEdo */
+
+    .why-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* Intro */
+
+    .edo-introduction-container,
+    .about-touredo-container {
+        gap: 40px;
+    }
+
+
+    /* Footer */
+
+    .footer-middle {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   20. MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================
+       NAVIGATION
+    ====================================== */
+
+    .nav {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+
+        padding: 10px 18px;
+
+        gap: 12px;
+    }
+
+
+    .nav > .logo {
+        flex: 0 0 auto;
+    }
+
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 22px;
+    }
+
+
+    .btn {
+        order: 2;
+    }
+
+
+    .btn-links {
+        gap: 7px;
+    }
+
+
+    .register-btn,
+    .login-btn {
+        min-width: auto;
+
+        padding: 7px 11px;
+
+        font-size: 11px;
+    }
+
+
+    /*
+       Navigation links take the entire
+       second row on mobile.
+    */
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 25px;
+
+        padding-top: 4px;
+
+        border-top: 1px solid rgba(245, 215, 110, 0.15);
+    }
+
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+
+    /* =====================================
+       HERO
+    ====================================== */
+
+    .about-hero {
+        min-height: 470px;
+
+        background-position: 65% center;
+    }
+
+
+    .about-hero-content {
+        padding: 65px 10px;
+    }
+
+
+    .about-hero h1 {
+        font-size: clamp(40px, 12vw, 60px);
+    }
+
+
+    .about-hero p {
+        font-size: 14px;
+
+        max-width: 100%;
+    }
+
+
+    /* =====================================
+       INTRODUCTION
+    ====================================== */
+
+    .edo-introduction {
+        padding: 60px 20px;
+    }
+
+
+    .edo-introduction-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .edo-introduction-image img {
+        height: 300px;
+    }
+
+
+    .edo-introduction-content h2 {
+        font-size: 35px;
+    }
+
+
+    /* =====================================
+       HISTORY
+    ====================================== */
+
+    .edo-history {
+        padding: 60px 20px;
+    }
+
+
+    .history-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================
+       ABOUT TOUREDO
+    ====================================== */
+
+    .about-touredo {
+        padding: 60px 20px;
+    }
+
+
+    .about-touredo-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .about-touredo-image {
+        order: -1;
+    }
+
+
+    .about-touredo-image img {
+        height: 300px;
+    }
+
+
+    /* =====================================
+       WHY TOUREDO
+    ====================================== */
+
+    .why-touredo {
+        padding: 60px 20px;
+    }
+
+
+    .why-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================
+       FOOTER
+    ====================================== */
+
+    .footer-main {
+        width: calc(100% - 30px);
+
+        padding: 22px 20px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        margin-top: 35px;
+    }
+
+
+    .mail-text {
+        font-size: 21px;
+    }
+
+
+    .footer-middle {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 60px 0 50px;
+    }
+
+
+    .footer-middle .nav {
+        display: block;
+
+        padding: 0;
+
+        background: none;
+
+        box-shadow: none;
+    }
+
+
+    .footer-middle .logo {
+        justify-content: flex-start;
+    }
+
+
+    .footer-last {
+        width: calc(100% - 20px);
+
+        min-height: 60px;
+    }
+
+
+    .last {
+        font-size: 10px;
+
+        padding: 0 10px;
+    }
+
+}
+
+
+/* =========================================================
+   21. SMALL MOBILE PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* Navigation */
+
+    .nav {
+        padding: 9px 12px;
+    }
+
+
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 19px;
+    }
+
+
+    .register-btn,
+    .login-btn {
+        padding: 6px 9px;
+
+        font-size: 10px;
+    }
+
+
+    .nav-links {
+        gap: 17px;
+    }
+
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+
+    /* Hero */
+
+    .about-hero {
+        min-height: 440px;
+
+        background-position: 70% center;
+    }
+
+
+    .about-hero-content {
+        padding: 50px 5px;
+    }
+
+
+    .about-hero h1 {
+        font-size: 40px;
+    }
+
+
+    .about-hero p {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    /* Sections */
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+
+    .edo-introduction-content h2,
+    .about-touredo-content h2 {
+        font-size: 30px;
+    }
+
+
+    .history-card,
+    .why-card {
+        padding: 25px 18px;
+    }
+
+
+    /* Footer */
+
+    .footer-main {
+        border-radius: 15px;
+    }
+
+
+    .mail-text {
+        font-size: 18px;
+    }
+
+
+    .mail-text span {
+        font-size: 11px;
+    }
+
+
+    .footer-btn .Register {
+        padding: 9px 17px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   22. VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .logo-text,
+    .logo-text2 {
+        font-size: 17px;
+    }
+
+
+    .logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .register-btn,
+    .login-btn {
+        padding: 5px 7px;
+
+        font-size: 9px;
+    }
+
+
+    .nav-links {
+        gap: 12px;
+    }
+
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+
+    .about-hero h1 {
+        font-size: 35px;
+    }
+
+}
